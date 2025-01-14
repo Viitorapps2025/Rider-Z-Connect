@@ -1,4 +1,4 @@
-import React from "react";
+//import React from "react";
 import image from "../Assets/gallery-8.jpg"
 import { Link } from "react-router-dom";
 
@@ -39,24 +39,7 @@ const cards = [
     description: "We woke up to prepare for the trip back to Lagos. Breakfast was yam and sauce; Yam and egg and tea, coffee and chocolate drink.",
     image: image,
   },
-  {
-    date: "April 15, 2023",
-    title: "Triumph America",
-    description: "We woke up to prepare for the trip back to Lagos. Breakfast was yam and sauce; Yam and egg and tea, coffee and chocolate drink.",
-    image: image,
-  },
-  {
-    date: "April 15, 2023",
-    title: "First Ride Out to OTFA",
-    description: "We woke up to prepare for the trip back to Lagos. Breakfast was yam and sauce; Yam and egg and tea, coffee and chocolate drink.",
-    image: image,
-  },
-  {
-    date: "April 15, 2023",
-    title: "Spring Wildflowers",
-    description: "We woke up to prepare for the trip back to Lagos. Breakfast was yam and sauce; Yam and egg and tea, coffee and chocolate drink.",
-    image: image,
-  },
+
 ];
 
 const CardComponent = () => {

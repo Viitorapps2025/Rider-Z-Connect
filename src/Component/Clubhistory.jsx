@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "tailwindcss/tailwind.css"; // Ensure TailwindCSS is included
-import image from "../Assets/img-timeline.jpg"
+import image from "../Assets/img-timeline.jpg";
 const ClubHistory = () => {
   // State to track active year based on scroll position
   const [activeYear, setActiveYear] = useState("1935");
@@ -74,10 +74,18 @@ const ClubHistory = () => {
                   The McCook Outlaws Motorcycle Club
                 </h4>
                 <p className="text-gray-600 leading-relaxed w-[80%] justify-start">
-                The McCook Outlaws Motorcycle Club was established out of Matilda`s Bar on old Route 66 in McCook, Illinois, just outside of Chicago.
-Although the Club stayed together their activities had been limited during World War II. In May of 1946, the first major post-war motorcycle event was held at Soldier Field in Chicago.
-With new members coming from all over the Chicago area, the Club was growing in size from its early beginnings of 1935. Moving out of McCook and re-establishing itself in Chicago, the club decided to change its name.
-The “McCook Outlaws” became The “Chicago Outlaws”. The club logo also underwent a change; a small skull replaced the winged motorcycle .
+                  The McCook Outlaws Motorcycle Club was established out of
+                  Matilda`s Bar on old Route 66 in McCook, Illinois, just
+                  outside of Chicago. Although the Club stayed together their
+                  activities had been limited during World War II. In May of
+                  1946, the first major post-war motorcycle event was held at
+                  Soldier Field in Chicago. With new members coming from all
+                  over the Chicago area, the Club was growing in size from its
+                  early beginnings of 1935. Moving out of McCook and
+                  re-establishing itself in Chicago, the club decided to change
+                  its name. The “McCook Outlaws” became The “Chicago Outlaws”.
+                  The club logo also underwent a change; a small skull replaced
+                  the winged motorcycle .
                 </p>
               </div>
 
@@ -88,10 +96,18 @@ The “McCook Outlaws” became The “Chicago Outlaws”. The club logo also un
                   Post-War Motorcycle Events
                 </h4>
                 <p className="text-gray-600 leading-relaxed">
-                The McCook Outlaws Motorcycle Club was established out of Matilda`s Bar on old Route 66 in McCook, Illinois, just outside of Chicago.
-Although the Club stayed together their activities had been limited during World War II. In May of 1946, the first major post-war motorcycle event was held at Soldier Field in Chicago.
-With new members coming from all over the Chicago area, the Club was growing in size from its early beginnings of 1935. Moving out of McCook and re-establishing itself in Chicago, the club decided to change its name.
-The “McCook Outlaws” became The “Chicago Outlaws”. The club logo also underwent a change; a small skull replaced the winged motorcycle .
+                  The McCook Outlaws Motorcycle Club was established out of
+                  Matilda`s Bar on old Route 66 in McCook, Illinois, just
+                  outside of Chicago. Although the Club stayed together their
+                  activities had been limited during World War II. In May of
+                  1946, the first major post-war motorcycle event was held at
+                  Soldier Field in Chicago. With new members coming from all
+                  over the Chicago area, the Club was growing in size from its
+                  early beginnings of 1935. Moving out of McCook and
+                  re-establishing itself in Chicago, the club decided to change
+                  its name. The “McCook Outlaws” became The “Chicago Outlaws”.
+                  The club logo also underwent a change; a small skull replaced
+                  the winged motorcycle .
                 </p>
               </div>
 
@@ -102,10 +118,18 @@ The “McCook Outlaws” became The “Chicago Outlaws”. The club logo also un
                   The Chicago Outlaws
                 </h4>
                 <p className="text-gray-600 leading-relaxed">
-                The McCook Outlaws Motorcycle Club was established out of Matilda`s Bar on old Route 66 in McCook, Illinois, just outside of Chicago.
-Although the Club stayed together their activities had been limited during World War II. In May of 1946, the first major post-war motorcycle event was held at Soldier Field in Chicago.
-With new members coming from all over the Chicago area, the Club was growing in size from its early beginnings of 1935. Moving out of McCook and re-establishing itself in Chicago, the club decided to change its name.
-The “McCook Outlaws” became The “Chicago Outlaws”. The club logo also underwent a change; a small skull replaced the winged motorcycle .
+                  The McCook Outlaws Motorcycle Club was established out of
+                  Matilda`s Bar on old Route 66 in McCook, Illinois, just
+                  outside of Chicago. Although the Club stayed together their
+                  activities had been limited during World War II. In May of
+                  1946, the first major post-war motorcycle event was held at
+                  Soldier Field in Chicago. With new members coming from all
+                  over the Chicago area, the Club was growing in size from its
+                  early beginnings of 1935. Moving out of McCook and
+                  re-establishing itself in Chicago, the club decided to change
+                  its name. The “McCook Outlaws” became The “Chicago Outlaws”.
+                  The club logo also underwent a change; a small skull replaced
+                  the winged motorcycle .
                 </p>
               </div>
             </div>

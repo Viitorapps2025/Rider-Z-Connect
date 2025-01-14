@@ -1,7 +1,7 @@
-import React from 'react'
+//import React from 'react'
 import CardLayout from '../Component/Cardlayout'
-import Footer from '../Component/Footer'
-import Questions from '../Component/Questions'
+//import Footer from '../Component/Footer'
+//import Questions from '../Component/Questions'
 
 const Breakfastrides = () => {
   return (
@@ -16,8 +16,8 @@ const Breakfastrides = () => {
       </div>
 
       <div className='mt-28'>
-        <Questions/>
-        <Footer/>
+        {/* <Questions/> */}
+        {/* <Footer/> */}
       </div>
     </div>
   )

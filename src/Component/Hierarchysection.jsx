@@ -1,4 +1,4 @@
-import React from "react";
+
 import image from "../Assets/bg-newsletter.jpg"
 const HierarchySection = () => {
   return (

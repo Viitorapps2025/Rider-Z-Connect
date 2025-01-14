@@ -1,4 +1,4 @@
-import React from "react";
+//import React from "react";
 import background from "../Assets/rev_slidehome1_1.jpg"
 const RidingSection = () => {
   return (

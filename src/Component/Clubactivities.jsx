@@ -1,4 +1,4 @@
-import React from "react";
+//import React from "react";
 import helmet from "../Assets/Icons/helmet.png" 
 import support from "../Assets/Icons/customer-support (2).png"
 import motorcycle from "../Assets/Icons/motorbike (1).png"

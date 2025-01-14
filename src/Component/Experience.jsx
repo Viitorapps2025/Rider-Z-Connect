@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import image from "../Assets/lexrider_banner2_1a.jpg"
 
 const Experience = () => {

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import  { useState, useEffect } from 'react';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -73,7 +73,7 @@ const Review = () => {
         <div className="p-4 rounded-lg mb-8 h-60 transition-all duration-1000 ease-in-out">
           {/* Comment Text with Smooth Transition */}
           <p className="text-lg lg:text-2xl text-black mb-4 transition-opacity duration-1000 ease-in-out opacity-100">
-            "{reviews[currentReview].comment}"
+          &ldquo;{reviews[currentReview].comment}&ldquo;
           </p>
         </div>
 

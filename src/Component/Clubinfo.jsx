@@ -1,10 +1,12 @@
 import React from "react";
 import background from "../Assets/breacumb.jpg";
 
+
+ 
 const ClubInfo = (props) => {
   return (
     <div
-      className="relative bg-cover bg-center h-screen"
+      className="relative bg-cover bg-center w-full h-[50vh] bg-no-repeat"
       style={{ backgroundImage: `url(${props.background})` }}
     >
       {/* Overlay */}

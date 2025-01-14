@@ -1,8 +1,8 @@
-import React from 'react'
+//import React from 'react'
 import Hero from '../Component/Hero'
 import Name from '../Component/Name'
 import Carousel from '../Component/Carousel'
-import Footer from '../Component/Footer'
+//import Footer from '../Component/Footer'
 
 
 const Events = () => {
@@ -21,7 +21,7 @@ const Events = () => {
           <Carousel />
         </div>
         <div>
-          <Footer />
+        
         </div>
       </div>
 

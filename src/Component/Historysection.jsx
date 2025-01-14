@@ -1,4 +1,4 @@
-import React from "react";
+
 import image from "../Assets/history-1.jpg"
 import image2 from "../Assets/history-2.jpg"
 

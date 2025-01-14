@@ -1,4 +1,4 @@
-import React from "react";
+
 import bikeImage1 from "../Assets/lexrider_banner2_2a.jpg"; // Replace with your red-tinted bike image
 import bikeImage2 from "../Assets/lexrider_banner2_1a.jpg"; // Replace with your lower image
 

@@ -1,4 +1,4 @@
-import React from "react";
+
 import image from "../Assets/mission.jpg"
 const OurRides = () => {
   const rides = [

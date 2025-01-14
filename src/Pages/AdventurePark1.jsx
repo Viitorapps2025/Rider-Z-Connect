@@ -1,8 +1,8 @@
-import React from 'react'
+//import React from 'react'
 import PhotoCarousel from '../Component/PhotoCarousel'
 import RatingContainer from '../Component/RatingContainer'
 import Descriptioncard from '../Component/Descriptioncard'
-import Footer from "../Component/Footer"
+//import Footer from "../Component/Footer"
 import CardLayout from '../Component/Cardlayout'
 
 const AdventurePark1 = () => {
@@ -28,7 +28,7 @@ const AdventurePark1 = () => {
       <CardLayout/>
     </div>
     <div className='pt-32'>
-      <Footer/>
+      {/* <Footer/> */}
     </div>
     </div>
     </>

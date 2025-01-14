@@ -1,10 +1,11 @@
-import React from "react";
+//import React from "react";
 import { Link } from "react-router-dom";
 import image1 from "../Assets/Images/WhatsApp Image 2024-12-16 at 5.54.51 PM (1).jpeg"
 import image2 from "../Assets/Images/WhatsApp Image 2024-12-16 at 5.54.51 PM (2).jpeg"
 import image3 from "../Assets/Images/WhatsApp Image 2024-12-16 at 5.54.51 PM (3).jpeg"
 import image4 from "../Assets/Images/WhatsApp Image 2024-12-16 at 5.54.51 PM.jpeg"
 import image5 from "../Assets/Images/WhatsApp Image 2024-12-16 at 5.55.51 PM (2).jpeg"
+
 const Card = ({ image, title, price }) => {
   return (
     <div className="bg-black text-white  shadow-lg  flex flex-col  ">

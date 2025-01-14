@@ -1,4 +1,4 @@
-import React from 'react'
+//import React from 'react'
 import ClubInfo from '../Component/Clubinfo'
 import MotorcycleClubSection from '../Component/Motorcycleclubsection'
 import ClubActivities from '../Component/Clubactivities'
@@ -7,8 +7,8 @@ import WhyChooseUs from '../Component/Whychooseus'
 import RecentPosts from '../Component/Recentpost'
 import RidingSection from '../Component/Ridingsection'
 import background from "../Assets/breacumb.jpg";
-import Questions from '../Component/Questions'
-import Footer from '../Component/Footer'
+//import Questions from '../Component/Questions'
+//import Footer from '../Component/Footer'
 
 
 const Aboutinfo = () => {
@@ -23,9 +23,8 @@ const Aboutinfo = () => {
    <RecentPosts/>
    <RidingSection/>
   
-   <Questions/>
-   <Footer/>
-
+  
+   
     </div>
   
    </>

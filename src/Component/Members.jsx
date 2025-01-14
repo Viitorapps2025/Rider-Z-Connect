@@ -6,6 +6,14 @@ import 'aos/dist/aos.css';
 
 const Members = () => {
  
+
+  const images = ["https://demo2.wpopal.com/lexrider/wp-content/uploads/elementor/thumbs/lexrider_team4-o6rt20alcbsieg5ckoe0rcczgqnd2lriss7cfestvs.jpg",
+    "https://demo2.wpopal.com/lexrider/wp-content/uploads/elementor/thumbs/lexrider_team4-o6rt20alcbsieg5ckoe0rcczgqnd2lriss7cfestvs.jpg",
+    "https://demo2.wpopal.com/lexrider/wp-content/uploads/elementor/thumbs/lexrider_team4-o6rt20alcbsieg5ckoe0rcczgqnd2lriss7cfestvs.jpg",
+    "https://demo2.wpopal.com/lexrider/wp-content/uploads/elementor/thumbs/lexrider_team4-o6rt20alcbsieg5ckoe0rcczgqnd2lriss7cfestvs.jpg"
+
+  ]
+  
     AOS.init({
         duration: 2000, // Animation duration in milliseconds
         once: false,    // Animation triggers every time the element enters the viewport
@@ -23,14 +31,14 @@ const Members = () => {
 
       {/* Grid Section */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
-        {[...Array(8)].map((_, index) => (
+        {images.map((image, index) => (
           <div
             key={index}
             className="w-full h-80 bg-gray-800 rounded-lg overflow-hidden relative group" data-aos="fade-right"
           >
             {/* Image */}
             <img
-              src="https://demo2.wpopal.com/lexrider/wp-content/uploads/elementor/thumbs/lexrider_team4-o6rt20alcbsieg5ckoe0rcczgqnd2lriss7cfestvs.jpg"
+              src={image}
               alt={`Member ${index + 1}`}
               className="w-full h-full object-cover transition-all duration-300"
             />

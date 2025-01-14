@@ -1,8 +1,8 @@
-import React from 'react'
+//import React from 'react'
 import SimpleNavbar from '../Component/Simplenav'
 import Filters from '../Component/Filter'
 import CardLayout from '../Component/Cardlayout'
-import Footer from '../Component/Footer'
+//import Footer from '../Component/Footer'
 
 const Expeditions = () => {
   return (
@@ -20,7 +20,7 @@ const Expeditions = () => {
         <CardLayout/>
       </div>
       <div className='mt-28'>
-        <Footer/>
+        {/* <Footer/> */}
       </div>
     </div>
   )

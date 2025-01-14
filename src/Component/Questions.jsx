@@ -2,7 +2,8 @@
 import { FaPhone, FaEnvelope } from 'react-icons/fa';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-
+import { Link } from 'react-router-dom';
+// import Gallery from './Gallery';
 
 const Questions = () => {
 
@@ -26,11 +27,11 @@ const Questions = () => {
           <div className='w-full flex flex-wrap gap-12 mt-16'>
             <div className="flex items-center">
               <FaPhone className="text-yellow-500 text-sm lg:text-xl mr-4" />
-              <span className="text-xl lg:text-3xl text-white" data-aos="fade-left">9818855952</span>
+             <a href="tel:+919818855952" ><span className="text-xl lg:text-3xl text-white" data-aos="fade-left">+91 9818855952</span></a> 
             </div>
             <div className="flex items-center">
               <FaEnvelope className="text-yellow-500 text-sm lg:text-xl mr-4" />
-              <span className=" text-lg lg:text-3xl text-white" data-aos="fade-left">admin@riderzconnect.com</span>
+             <a href="mailto:admin@riderzconnect.com"><span className=" text-lg lg:text-3xl text-white" data-aos="fade-left">admin@riderzconnect.com</span></a> 
             </div>
           </div>
         </div>
@@ -48,11 +49,19 @@ const Questions = () => {
         {/* Right Section */}
         <div className="flex-1 rounded-lg p-6 w-full md:max-w-[20%]">
           <h4 className="text-xl font-bold mb-10 text-white">QUICK LINKS</h4>
-          <p className="mb-2 text-gray-400 font-semibold">About</p>
-          <p className="mb-2 text-gray-400 font-semibold">Our Missions</p>
-          <p className="mb-2 text-gray-400 font-semibold">Videos</p>
-          <p className="mb-2 text-gray-400 font-semibold">Albums</p>
-          <p className="mb-2 text-gray-400 font-semibold">Contact</p>
+          <Link to="/about-club">
+        <p className="mb-2 text-gray-400 font-semibold cursor-pointer">About</p>
+      </Link>
+      <Link to="/about-club/our-mission">
+        <p className="mb-2 text-gray-400 font-semibold">Our Missions</p>
+      </Link>
+      <Link to="/media">
+        <p className="mb-2 text-gray-400 font-semibold">Gallery</p>
+      </Link>
+     
+      <Link to="/contact">
+        <p className="mb-2 text-gray-400 font-semibold">Contact</p>
+      </Link>
         </div>
       </div>
     </div>

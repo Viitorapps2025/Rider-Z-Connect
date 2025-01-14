@@ -1,4 +1,4 @@
-import React from 'react';
+
 import image1 from "../Assets/lexrider_banner2_1a.jpg";
 import image2 from "../Assets/lexrider_banner2_2a.jpg"
 const MotorcycleClub = () => {

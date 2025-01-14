@@ -1,4 +1,4 @@
-import React from 'react';
+//import React from 'react';
 import member from "../Assets/Icons/user (1).png";
 import community from "../Assets/Icons/sociology.png";
 import support from "../Assets/Icons/customer-support (2).png";

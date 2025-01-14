@@ -153,10 +153,10 @@ const UpcomingEvent = () => {
           <iframe
   width="100%"
   height="auto"
-  src="https://www.youtube.com/embed/FKVLsoKGV6w?si=sPNwE87BxMJQYsjI&autoplay=1&controls=0&modestbranding=1"
+  src="https://www.youtube.com/embed/FKVLsoKGV6w?autoplay=1&controls=0&modestbranding=1&rel=0&disablekb=1"
   title="YouTube video player"
   frameBorder="0"
-  allow="encrypted-media"
+  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
   referrerPolicy="strict-origin-when-cross-origin"
   allowFullScreen
 ></iframe>

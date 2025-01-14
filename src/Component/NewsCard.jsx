@@ -1,4 +1,4 @@
-import React from 'react';
+
 
 const NewsCard = ( props ) => {
   return (
@@ -17,7 +17,7 @@ const NewsCard = ( props ) => {
           rel="noopener noreferrer"
           className="text-blue-500 text-sm mt-4 inline-block"
         >
-          Read more
+       <a href={props.link}>Read more</a>   
         </a>
       </div>
     </div>

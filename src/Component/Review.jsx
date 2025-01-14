@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 import { FaStar } from "react-icons/fa";
 
 const ReviewStrip = () => {
@@ -54,7 +54,8 @@ const ReviewStrip = () => {
 
             {/* Review Comment */}
             <p className="text-gray-300">
-              "Amazing experience! The bike ride was smooth, and the scenic views were breathtaking. Highly recommend this tour!"
+            &ldquo; Amazing experience! The bike ride was smooth, and the scenic views were breathtaking. 
+            Highly recommend this tour!&ldquo;
             </p>
           </div>
         </div>
@@ -85,7 +86,8 @@ const ReviewStrip = () => {
 
             {/* Review Comment */}
             <p className="text-gray-300">
-              "A perfect getaway! The staff was friendly and the route was carefully planned. I felt safe the entire time!"
+            &ldquo; A perfect getaway! The staff was friendly and the route was carefully planned.
+             I felt safe the entire time!&ldquo;
             </p>
           </div>
 

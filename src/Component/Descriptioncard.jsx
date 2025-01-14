@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import { FaChevronDown, FaChevronUp, FaCheckCircle, FaFilePdf } from "react-icons/fa";
 import PhotoCarousel from "./PhotoCarousel";
 import LocationStrip from "./LocationStrip";
