@@ -18,21 +18,18 @@ const Experience = () => {
             WE ARE EXPERIENCED
           </span>
           <h2 className="text-4xl md:text-5xl font-bold mt-2">
-            MORE THAN 25 YEARS <br /> OF AGE
+          MORE THAN 15 YEARS <br />OF MOTORCYCLING
           </h2>
         </div>
-
+       
         {/* Content Section */}
         <div className="flex flex-col lg:flex-row gap-8 items-center">
           {/* Left Text Content */}
           <div className="w-full lg:w-1/2">
             <p className="text-gray-400 leading-relaxed mb-6">
-              Looking for some adventure? We are working on several short tours
-              on Vancouver Island, On-Road, Off-Road, there is so much to see
-              here. Keep an eye on the website and our News Letter as we release
-              information about these tours and how you can get off the beaten
-              track and experience the incredible parts of this Island with our
-              expert guides.
+            Looking for adventure? At RIDERZCONNECT, we&apos;re gearing up for an exciting lineup of short tours and enduro rides across some of India&apos;s most breathtaking landscapes! From the majestic Himalayas 
+and the serene Northeast to the vibrant trails of South India, both on-road and off-road, there’s so much waiting to be discovered. Stay tuned to our website and subscribe to our Newsletter for the latest 
+updates on these thrilling tours. Get ready to go off the beaten track and explore the hidden gems of India with our expert guides leading the way!
             </p>
 
             {/* Skills with Animated Bars */}

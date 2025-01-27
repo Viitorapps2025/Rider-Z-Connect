@@ -1,4 +1,4 @@
-//import React from 'react';
+import React from 'react';
 import ProductSuggession from './ProductSuggession';
 import { Link } from 'react-router-dom';
 

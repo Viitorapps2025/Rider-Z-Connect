@@ -1,9 +1,14 @@
-//import React from 'react';
+
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import CardComponent from './CardComponent';
 import { Link } from 'react-router-dom';
+import jsonData from "../RidingReport.json"; // Adjust the path
+
 const Ridingreport = () => {
+
+
+  const cards = jsonData.RidingReport;
 
    AOS.init({
           duration: 2000, // Animation duration in milliseconds
@@ -17,7 +22,7 @@ const Ridingreport = () => {
       <h1 className="text-center text-white text-xl pt-24 mb-4" data-aos="fade-up">RIDING REPORT</h1>
       <p className="text-center text-white text-6xl mb-20" data-aos="fade-down">OUR RIDES</p>
       <div className='bg-black'>
-      <CardComponent/>
+      <CardComponent cards={cards} />
       </div>
       {/* Explore More Button */}
       <div className='w-fit mx-auto mt-16' data-aos="fade-up">

@@ -1,69 +1,90 @@
+import { FaMapMarkerAlt, FaStar} from "react-icons/fa";
+import PropTypes from "prop-types";
+import Gutsy from "../Assets/Icons/travel.png"
+import Couple from "../Assets/Icons/couple.png"
+import Delivery from '../Assets/Icons/delivery.png'
+import Bike from "../Assets/Icons/motorbike.png"
+import Suite from "../Assets/Icons/suite.png"
+import Guide from "../Assets/Icons/tour-guide.png"
 
-import { FaMapMarkerAlt, FaStar, FaRegMoneyBillAlt, FaRegSmile } from "react-icons/fa";
-// import SimpleNavbar from "../Component/Simplenav";
-// import StickyPriceBar from "./StickyPriceBar";
+const features = [
+  { icon: Gutsy, text: " Gutsy Adventure" },
+  { icon:Couple, text: " Couples/Group Adventure, Solo Adventure" },
+  { icon: Delivery, text: " 24 hrs confirmation" },
+  { icon: Suite, text: " Stay" },
+  { icon: Bike, text: " Bike" },
+  { icon: Guide, text: " Tour Guide" },
+];
 
-const RatingContainer = () => {
+const RatingContainer = ({ 
+  title, 
+  location, 
+  rating, 
+
+}) => {
   return (
     <div className="bg-white overflow-hidden">
-    <div className="min-h-fit pb-6 max-height-fit bg-black/80 text-white overflow-hidden ">
-    
+      <div className="min-h-fit pb-6 max-height-fit bg-black/80 text-white overflow-hidden">
+        {/* Content */}
+        <div className="p-1 pl-8">
+          {/* Big Title */}
+          <h1 className="text-2xl md:text-2xl font-bold">{title}</h1>
 
-      {/* Content */}
-      <div className="p-1 pl-8">
-        {/* Big Title */}
-        <h1 className="text-2xl md:text-2xl font-bold ">Rishikesh Adventure Park</h1>
+          {/* Location */}
+          <div className="flex items-center">
+            <FaMapMarkerAlt className="text-orange-500 text-lg mr-2" />
+            <span className="text-lg font-medium">{location}</span>
+          </div>
 
-        {/* Location */}
-        <div className="flex items-center ">
-          <FaMapMarkerAlt className="text-orange-500 text-lg mr-2" />
-          <span className="text-lg font-medium">New York, USA</span>
-        </div>
+          {/* 5-Star Rating */}
+          <div className="flex items-center">
+            {Array(5)
+              .fill()
+              .map((_, index) => (
+                <FaStar
+                  key={index}
+                  className={`text-xl mr-1 ${
+                    index < Math.round(rating) ? "text-yellow-400" : "text-gray-400"
+                  }`}
+                />
+              ))}
+            <span className="text-lg font-medium ml-2">({rating})</span>
+          </div>
 
-        {/* 5-Star Rating */}
-        <div className="flex items-center ">
-          {Array(5)
-            .fill()
-            .map((_, index) => (
-              <FaStar key={index} className="text-yellow-400 text-xl mr-1" />
+          {/* Features */}
+          <div className="grid grid-cols-2 gap-1 w-fit">
+            {features.map((feature, index) => (
+              <div
+                key={index}
+                className="flex  justify-between gap-3 items-center max-w-fit bg-black/80 pl-2 pr-2 pt-2 pb-2 rounded-lg"
+              >
+               <img className="max-w-fit h-5 w-8" src={feature.icon} alt={feature.text} />
+                <span className="text-sm font-medium">{feature.text}</span>
+              </div>
             ))}
-          <span className="text-lg font-medium ml-2">(4.8)</span>
-        </div>
-
-        {/* Price Strip */}
-        <div className="bg-white">
-        <div className="flex items-center justify-between bg-black/80  mb-1 ">
-          <span className="text-lg font-bold">$120 per person</span>
-         
-        </div>
-        </div>
-
-        {/* Rating Divs */}
-        <div className="grid grid-cols-2  gap-1 w-fit">
-          {/* First Row - 3 Divs */}
-          <div className="flex items-center max-w-fit bg-black/80 pl-1 pr-1 pt-1 pb-1 rounded-lg">
-            <FaStar className="text-orange-500 text-lg mr-2" />
-            <span className="text-sm font-medium">Excellent Service</span>
-          </div>
-          <div className="flex items-center max-w-fit bg-black/80 pl-1 pr-1 pt-1 pb-1 rounded-lg">
-            <FaRegMoneyBillAlt className="text-green-500 text-lg mr-2" />
-            <span className="text-sm font-medium">Affordable Price</span>
-          </div>
-          <div className="flex items-center max-w-fit  bg-black/80 pl-1 pr-1 pt-1 pb-1 rounded-lg">
-            <FaRegSmile className="text-yellow-400 text-lg mr-2" />
-            <span className="text-sm font-medium">Friendly Staff</span>
-          </div>
-
-          {/* Second Row - 1 Div */}
-          <div className="flex items-center max-w-fit bg-black/80 pl-1 pr-1 pt-1 pb-1 rounded-lg">
-            <FaStar className="text-orange-500 text-lg mr-2" />
-            <span className="text-sm font-medium">Highly Recommended</span>
           </div>
         </div>
       </div>
     </div>
-    </div>
   );
 };
+
+// Add PropTypes for validation
+RatingContainer.propTypes = {
+  title: PropTypes.string.isRequired,
+  location: PropTypes.string.isRequired,
+  rating: PropTypes.number.isRequired,
+ 
+};
+
+// Example Usage
+export const FeaturesCon = () => (
+  <RatingContainer
+    title="Rishikesh Adventure Park"
+    location="New York, USA"
+    rating={4.8}
+    features={features}
+  />
+);
 
 export default RatingContainer;

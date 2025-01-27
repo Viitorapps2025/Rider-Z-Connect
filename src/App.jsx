@@ -26,9 +26,10 @@ import Login from './Pages/Login';
 import LandingPage from './Pages/LandingPage';
 import Media from './Pages/Media';
 import VerifyUser from './Pages/VerifyUser';
-import Questions from './Component/Questions'
-import Footer from './Component/Footer';
 import ContactPage from './Pages/Contact';
+import FAQ from './Pages/Faq';
+import Questions from './Component/Questions';
+import Footer from './Component/Footer';
 
 function App() {
   return (
@@ -47,7 +48,7 @@ function App() {
         <Route path="/events" element={<Events/>}/>
         <Route path="/expeditions" element={<Expeditions/>}/>
         <Route path="/workshops" element={<Workshops/>}/>
-        <Route path="/adventure1" element={<AdventurePark1/>}/>
+        <Route path="/adventure/:id" element={<AdventurePark1/>}/>
         <Route path="about-club" element={<Aboutinfo/>}/>
         <Route path="about-club/club-info" element={<Aboutinfo/>}/>
         <Route path="about-club/club-history" element={<Clubhistory/>}/>
@@ -55,7 +56,7 @@ function App() {
         <Route path="about-club/our-members" element={<OurMembers/>}/>
         <Route path="/rides" element={<GridStyle/>}/>
         <Route path="/news" element={<News/>}/>
-        <Route path="rides/grid" element={<GridStylecard/>}/>
+        <Route path="/rides/grid/:id" element={<GridStylecard/>}/>
         <Route path="/shop" element={<Shop/>}/>
         <Route path="/shopcard" element={<ShopCard/>}/>
         <Route path="/addtocart" element={<AddtoCart/>}/>
@@ -64,10 +65,12 @@ function App() {
         <Route path="/media" element={<Media/>}/>
         <Route path="/verifyuser" element={<VerifyUser/>}/>
         <Route path="/contact" element={<ContactPage/>}/>
-    
+    <Route path="/faq" element={<FAQ/>}/>
       </Routes>
-  <Questions/>
-      <Footer/>
+
+<Questions/>
+<Footer/>
+      
     </div>
   );
 }

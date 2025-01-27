@@ -1,14 +1,16 @@
-// import React from 'react'
+//import React from 'react'
 import Bgcarousel from '../Component/Bgcarousel'
 import UpcomingEvent from '../Component/Upcomingevent'
-// import Ourmission from '../Component/Ourmission'
+//import Ourmission from '../Component/Ourmission'
 import Joinevent from '../Component/Joinevent'
 import Members from '../Component/Members'
 import Review from '../Component/Reviews'
 import Ridingreport from '../Component/Ridingreport'
 import OurGallery from '../Component/OurGallery'
-//import Questions from '../Component/Questions'
-//import Footer from '../Component/Footer'
+
+import FAQ from "../Pages/Faq"
+
+
 
 const Home = () => {
   return (
@@ -32,18 +34,13 @@ const Home = () => {
       <Review/>
      </div>
      <div>
-      <Ridingreport/>
+       <Ridingreport/>  
      </div>
      <div>
       <OurGallery/>
      </div>
-
-     <div>
-      {/* <Questions/> */}
-     </div>
-     <div>
+<FAQ/>
    
-     </div>
       
      </div>
     </>

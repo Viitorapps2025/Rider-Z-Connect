@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import image1 from "../Assets/Images/WhatsApp Image 2024-12-16 at 5.54.51 PM (1).jpeg"
 import image2 from "../Assets/Images/WhatsApp Image 2024-12-16 at 5.54.51 PM (2).jpeg"
 import image3 from "../Assets/Images/WhatsApp Image 2024-12-16 at 5.54.51 PM (3).jpeg"
-import image4 from "../Assets/Images/WhatsApp Image 2024-12-16 at 6.11.55 PM.jpeg";
+//import image4 from "../Assets/Images/WhatsApp Image 2024-12-16 at 6.11.55 PM.jpeg";
 
 const Carousel = () => {
   const carouselRef = useRef(null);
@@ -13,7 +13,7 @@ const Carousel = () => {
     
     { id: 2, image: image2, title: 'Expeditions' ,link:"/expeditions" },
     { id: 3, image: image3, title : "workshops" , link : "/workshops" },
-    { id: 4, image: image4, title: 'Events', link: "/events" },
+   
   ];
 
   // Auto-slide functionality

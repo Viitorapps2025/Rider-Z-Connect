@@ -1,4 +1,4 @@
-//import React from 'react'
+
 import ClubInfo from '../Component/Clubinfo'
 import ProductGrid from '../Component/ProductGrid'
 

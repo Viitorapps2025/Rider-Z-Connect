@@ -1,5 +1,3 @@
-
-
 const Gallery = () => {
   const images = [
     "https://templatekit.jegtheme.com/riderhood/wp-content/uploads/sites/293/2022/06/bikers-women-in-leather-jackets-with-motorcycles-e1655957913441.jpg", // Tall Image 1
@@ -11,16 +9,16 @@ const Gallery = () => {
   ];
 
   return (
-    <div className="py-8 px-4">
-      <div
-        className="max-w-[190vh] mx-auto grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3 lg:gap-6"
-      >
+    <div className="relative py-8 px-4">
+      {/* Background Animation */}
+      <div className="absolute inset-0 -z-10 overflow-hidden bg-gradient-to-r from-blue-500 via-green-500 to-purple-500 animate-background-animation"></div>
+
+      {/* Gallery Grid */}
+      <div className="max-w-[190vh] mx-auto  grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3 lg:gap-6">
         {images.map((img, index) => (
           <div
             key={index}
-            className={`relative group overflow-hidden rounded-lg shadow-lg ${
-              (index === 0 || index === 4 || index === 3) ? 'row-span-2' : ''
-            }`}
+            className={`relative group overflow-hidden rounded-lg shadow-lg ${index === 0 || index === 4 || index === 3 ? "row-span-2" : ""}`}
           >
             {/* Image */}
             <img

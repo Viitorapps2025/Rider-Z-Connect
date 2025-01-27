@@ -20,7 +20,7 @@ const Login = () => {
     // API call
     try {
       const response = await fetch(
-        "https://riderz-backend-0e0d.onrender.com/api/auth/signin",
+        "https://riderz-backend-ep.onrender.com/api/auth/signin",
         {
           method: "POST",
           headers: {

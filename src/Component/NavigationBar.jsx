@@ -1,12 +1,17 @@
-import  { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import '../Assets/CSS/Main.css'
 import { NavLink, useLocation } from 'react-router-dom';
 import logo from "../Assets/white_logo_transparent_background.png";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { FaRegUser } from "react-icons/fa";
 import { FaCartShopping } from "react-icons/fa6";
+import { FaFacebookF, FaLinkedinIn, FaTwitter, FaYoutube, FaSearch, FaUser, FaShoppingCart } from "react-icons/fa";
+import { BsInstagram } from "react-icons/bs";
+import { RiTwitterXLine } from "react-icons/ri";
 
 const NavigationBar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isDropdownOpenmobile, setIsDropdownOpenMobile] = useState(false);
   let timeoutId;
 
   const handleMouseEnterr = () => {
@@ -20,15 +25,14 @@ const NavigationBar = () => {
       setIsDropdownOpen(false);
     }, 500);
   };
-  
- 
+
+
 
 
 
 
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [lastScrollY, setLastScrollY] = useState(0);
   const [navbarVisible, setNavbarVisible] = useState(true);
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [activeMobileDropdown, setActiveMobileDropdown] = useState(null);
@@ -36,20 +40,34 @@ const NavigationBar = () => {
   const timeoutRef = useRef(null);
   const location = useLocation();
 
+  const toggleDropdown = () => {
+    setIsDropdownOpen((prev) => !prev);
+  };
+
+  const toggleDropdownMobile = () => {
+    setIsDropdownOpenMobile((prev) => !prev);
+  };
+
   useEffect(() => {
     setMobileMenuOpen(false);
   }, [location]);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > lastScrollY) setNavbarVisible(false);
-      else setNavbarVisible(true);
-      setLastScrollY(window.scrollY);
-    };
 
+  const handleScroll = () => {
+    if (window.scrollY === 0) {
+      setNavbarVisible(true); // Show top div only when scrolled to the top
+    } else {
+      setNavbarVisible(false); // Hide top div for any scroll position other than top
+    }
+  };
+
+
+
+  useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [lastScrollY]);
+  }, []);
+
 
   const toggleMobileMenu = () => setMobileMenuOpen(!mobileMenuOpen);
 
@@ -77,12 +95,123 @@ const NavigationBar = () => {
     { label: 'MEDIA', link: '/media', subOptions: [] },
     { label: 'NEWS', link: '/news', subOptions: [] },
     { label: 'PAGES', link: '/pages', subOptions: ['Contact Us', 'FAQ'] },
+    { label: 'FAQ', link: '/faq', subOptions: [] },
   ];
 
+
   return (
-    <div className="bg-white">
+    <div className='mainnav'>
+      <div
+        className={`text-white p-3 w-full transition-all duration-300 ${navbarVisible ? 'block' : 'hidden'}`}
+        style={{ backgroundColor: "#1d1d1d" }}
+      >
+        <div className="container mx-auto flex justify-between items-center px-4 py-2">
+          {/* Left Section */}
+          <div className="hidden md:flex text-sm items-center space-x-4">
+            <span className="whitespace-nowrap">Welcome to our club!</span>
+            <span className="text-yellow-500">•</span>
+            <a
+              href="mailto:admin@riderzconnect.com"
+              className="hover:text-yellow-500 whitespace-nowrap"
+            >
+              admin@riderzconnect.com
+            </a>
+            <span className="text-yellow-500">•</span>
+            {/* Social Icons */}
+            {[
+              { icon: <FaFacebookF />, label: "Facebook", href: "#" },
+              { icon: <FaLinkedinIn />, label: "LinkedIn", href: "#" },
+              { icon: <BsInstagram  />, label: "Instagram", href: "#" },
+              { icon: <FaYoutube />, label: "YouTube", href: "#" },
+              { icon: <RiTwitterXLine />, label: "Twitter", href: "#" },
+
+           
+            ].map((item, index) => (
+              <a
+                key={index}
+                href={item.href}
+                className="hover:text-yellow-500"
+                aria-label={item.label}
+              >
+                {item.icon}
+              </a>
+            ))}
+          </div>
+
+          {/* Right Section */}
+          <div className="flex items-center space-x-4 md:absolute md:right-4 md:top-0 md:p-4
+">
+            {/* Search Icon */}
+            <a href="#" className="text-yellow-500 hover:text-yellow-600">
+              <FaSearch />
+            </a>
+
+            {/* Shopping Cart Icon */}
+            <NavLink
+              to="#"
+              className="text-yellow-500 rounded-md hover:text-yellow-600 text-lg font-bold"
+            >
+              <FaShoppingCart />
+            </NavLink>
+
+            {/* User Icon with Dropdown */}
+            <div
+              className="relative"
+              onMouseEnter={handleMouseEnterr}
+              onMouseLeave={handleMouseLeavee}
+            >
+              {/* User Icon */}
+              <NavLink
+                to="#"
+                className="text-yellow-500 rounded-md hover:text-yellow-600 text-lg font-bold"
+                onClick={toggleDropdown} // Click handler for mobile
+              >
+                <FaUser />
+              </NavLink>
+
+              {/* Dropdown Menu */}
+              {isDropdownOpen && (
+                <div
+                className="absolute top-full mt-2 w-48 bg-black z-20 shadow-lg rounded-lg left-0 md:right-0 md:left-auto"
+                // style={{ maxWidth: "90vw" }} // Ensures dropdown fits within the screen
+                >
+                  <ul className="flex flex-col">
+                    <li>
+                      <NavLink
+                        to="/signup"
+                        className="block px-4 py-2 text-white hover:bg-yellow-600 hover:text-white"
+                      >
+                        Sign Up
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink
+                        to="/login"
+                        className="block px-4 py-2 text-white hover:bg-yellow-600 hover:text-white"
+                      >
+                        Login
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink
+                        to="/edit-account"
+                        className="block px-4 py-2 text-white hover:bg-yellow-600 hover:text-white"
+                      >
+                        Edit Your Account
+                      </NavLink>
+                    </li>
+                  </ul>
+                </div>
+              )}
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+
       <nav
-        className={`bg-black/60 opacity-90 text-white z-50 fixed w-full top-0 left-0 transition-all duration-300 ${navbarVisible ? 'translate-y-0' : '-translate-y-28'}`}
+        className={`bg-black/60 opacity-90 text-white z-10 w-full fixed left-0 right-0 transition-all duration-300 ${navbarVisible ? 'top-15' : 'top-0'}`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-2">
           <div className="flex justify-between items-center h-20 md:h-20">
@@ -141,67 +270,7 @@ const NavigationBar = () => {
               </ul>
             </div>
 
-            <div className='flex space-x-3'>
-             <div className=''>
-            <NavLink
-        to="#"
-        className="text-yellow-500 rounded-md hover:text-yellow-600 text-lg font-bold relative hidden lg:flex "
-      >
-        <FaCartShopping />
-      </NavLink>
-      </div> 
 
-
-            <div
-      className="relative hidden lg:flex"
-      onMouseEnter={handleMouseEnterr}
-      onMouseLeave={handleMouseLeavee}
-    >
-      <div className=''>
-
-        
-      {/* User Icon */}
-      <NavLink
-        to="#"
-        className="text-yellow-500  rounded-md hover:text-yellow-600 text-lg font-bold"
-      >
-        <FaRegUser className="" />
-      </NavLink>
-
-      {/* Dropdown Menu */}
-      {isDropdownOpen && (
-        <div className="absolute top-full right-0 mt-2 w-48 bg-black shadow-lg rounded-lg">
-          <ul className="flex flex-col">
-            <li>
-              <NavLink
-                to="/signup"
-                className="block px-4 py-2 text-white hover:bg-yellow-600 hover:text-white"
-              >
-                Sign Up
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/login"
-                className="block px-4 py-2 text-white hover:bg-yellow-600 hover:text-white"
-              >
-                Login
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/edit-account"
-                className="block px-4 py-2 text-white hover:bg-yellow-600 hover:text-white"
-              >
-                Edit Your Account
-              </NavLink>
-            </li>
-          </ul>
-        </div>
-      )}
-    </div>
-      </div>
-      </div>
             {/* Mobile Menu - Hamburger Button */}
             <div className="lg:hidden flex items-center">
               <span
@@ -225,12 +294,12 @@ const NavigationBar = () => {
                       className="bg-black opacity-100 flex items-center justify-between px-4 py-2 hover:bg-gray-600"
                       onClick={() => toggleMobileDropdown(index)}
                     >
-                    <NavLink
-    to={menu.link}
-    activeClassName="bg-gray-700"
-    className="text-white text-lg w-full block"
-    onClick={() => setMobileMenuOpen(false)} // Close menu on route change
-  >  <span className="block text-white text-lg">{menu.label}</span> </NavLink>
+                      <NavLink
+                        to={menu.link}
+                        activeClassName="bg-gray-700"
+                        className="text-white text-lg w-full block"
+                        onClick={() => setMobileMenuOpen(false)} // Close menu on route change
+                      >  <span className="block text-white text-lg">{menu.label}</span> </NavLink>
                       {menu.subOptions.length > 0 && (
                         <IoMdArrowDropdown className="text-lg text-white" />
                       )}
@@ -253,70 +322,59 @@ const NavigationBar = () => {
                     )}
                   </div>
                 ))}
-
-                
               </div>
-                 
-              <div className=''>
-            <NavLink
-        to="#"
-        className="text-yellow-500 rounded-md hover:text-yellow-600 text-lg font-bold ml-8 "
-      >
-        <FaCartShopping />
-      </NavLink>
-      </div> 
-
-
-              
-            <div
-      className="relative "
-      onMouseEnter={handleMouseEnterr}
-      onMouseLeave={handleMouseLeavee}
-    >
-      <div className=''>
-
-        
-      {/* User Icon */}
-      <NavLink
-        to="#"
-        className="text-yellow-500  rounded-md hover:text-yellow-600 text-lg font-bold"
-      >
-        <FaRegUser className="" />
-      </NavLink>
-
-      {/* Dropdown Menu */}
-      {isDropdownOpen && (
-        <div className="absolute top-full right-0 mt-2 w-48 bg-black shadow-lg rounded-lg">
-          <ul className="flex flex-col">
-            <li>
               <NavLink
-                to="/signup"
-                className="block px-4 py-2 text-white hover:bg-yellow-600 hover:text-white"
+                to="#"
+                className="text-yellow-500 rounded-md hover:text-yellow-600 text-lg font-bold ml-8 "
               >
-                Sign Up
+                <FaCartShopping />
               </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/login"
-                className="block px-4 py-2 text-white hover:bg-yellow-600 hover:text-white"
+              <div
+                className="relative "
+                onMouseEnter={handleMouseEnterr}
+                onMouseLeave={handleMouseLeavee}
               >
-                Login
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/edit-account"
-                className="block px-4 py-2 text-white hover:bg-yellow-600 hover:text-white"
-              >
-                Edit Your Account
-              </NavLink>
-            </li>
-          </ul>
-        </div>
-      )}
-    </div>      
-           </div>   
+                {/* User Icon */}
+                <NavLink
+                  to="#"
+                  className="text-yellow-500  rounded-md hover:text-yellow-600 text-lg font-bold"
+                  onClick={toggleDropdownMobile}
+                >
+                  <FaRegUser />
+                </NavLink>
+
+                {/* Dropdown Menu */}
+                {isDropdownOpenmobile && (
+                  <div className="absolute top-full right-0 mt-2 w-48 bg-white shadow-lg rounded-lg">
+                    <ul className="flex flex-col">
+                      <li>
+                        <NavLink
+                          to="/signup"
+                          className="block px-4 py-2 text-white hover:bg-yellow-600 hover:text-white"
+                        >
+                          Sign Up
+                        </NavLink>
+                      </li>
+                      <li>
+                        <NavLink
+                          to="/login"
+                          className="block px-4 py-2 text-white hover:bg-yellow-600 hover:text-white"
+                        >
+                          Login
+                        </NavLink>
+                      </li>
+                      <li>
+                        <NavLink
+                          to="/edit-account"
+                          className="block px-4 py-2 text-white hover:bg-yellow-600 hover:text-white"
+                        >
+                          Edit Your Account
+                        </NavLink>
+                      </li>
+                    </ul>
+                  </div>
+                )}
+              </div>
             </div>
           </div>
         </div>

@@ -1,27 +1,27 @@
-//import React from "react";
+
 
 const RecentPosts = () => {
   const posts = [
     {
       id: 1,
-      title: "Bold, bright, animated, mobile: the top design trends",
-      date: "April 17, 2019",
-      author: "Admin",
-      image: "https://via.placeholder.com/400x250", // Replace with actual image
+      title: "In Pics: Feast your eyes on the BMW F450 GS Concept ADV showcased at the Auto Expo 2025",
+      date: "Jan 18, 2025",
+      author: "HT Auto Desk",
+      image: "https://images.hindustantimes.com/auto/img/2025/01/18/600x338/BMW_F450_GS_Concept_1737179559067_1737179559283.jpeg", // Replace with actual image
     },
     {
       id: 2,
-      title: "15 books every designer needs to read",
-      date: "April 17, 2019",
-      author: "Admin",
-      image: "https://via.placeholder.com/400x250", // Replace with actual image
+      title: "Bharat Mobility 2025: BMW R 1300 GS Adventure launched, priced at ₹ 22.95 lakh",
+      date: "Jan 18, 2025",
+      author: "Sameer Fayaz Contractor ",
+      image: "https://images.hindustantimes.com/auto/img/2025/01/18/600x338/BMW_R_1300_GS_Adventure_1_1720247724353_1737181497188.jpg", // Replace with actual image
     },
     {
       id: 3,
-      title: "Tooting your own horn: tales of impostor syndrome",
-      date: "April 17, 2019",
-      author: "Admin",
-      image: "https://via.placeholder.com/400x250", // Replace with actual image
+      title: "Auto Expo 2025: 2025 BMW S 1000 RR launched with upgrades, priced at ",
+      date: "Jan 18, 2025",
+      author: " Sameer Fayaz Contractor ",
+      image: "https://images.hindustantimes.com/auto/img/2025/01/18/400x225/s-1000-rr-2_1737175883790_1737175893417.jpg", // Replace with actual image
     },
   ];
 

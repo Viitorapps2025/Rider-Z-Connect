@@ -1,4 +1,4 @@
-
+import React from 'react';
 import video from "../Assets/Video/PPAR - WS2024 - Resized Landing Page Movie (1) (1).mp4"
 const Hero = () => {
   return (
@@ -10,7 +10,7 @@ const Hero = () => {
         autoPlay
         loop
         muted
-        playsInline
+        playsInine
       ></video>
 
       

@@ -1,4 +1,4 @@
-import  { useState } from "react";
+import React, { useState } from "react";
 import { FaMapMarkerAlt, FaChevronDown, FaChevronUp, FaArrowRight } from "react-icons/fa";
 
 const LocationStrip = () => {

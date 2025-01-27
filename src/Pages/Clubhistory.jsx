@@ -5,8 +5,7 @@ import HistorySection from '../Component/Historysection'
 import ClubHistory from '../Component/Clubhistory'
 import Experience from '../Component/Experience'
 import RidingSection from '../Component/Ridingsection'
-//import Questions from '../Component/Questions'
-//import Footer from '../Component/Footer'
+
 
 const Clubhistory = () => {
   return (
@@ -16,8 +15,7 @@ const Clubhistory = () => {
        <ClubHistory/>
        <Experience/>
        <RidingSection/>
-       {/* <Questions/> */}
-       {/* <Footer/> */}
+     
     </div>
   )
 }

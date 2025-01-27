@@ -1,4 +1,4 @@
-//import React from "react";
+
 import helmet from "../Assets/Icons/helmet.png" 
 import support from "../Assets/Icons/customer-support (2).png"
 import motorcycle from "../Assets/Icons/motorbike (1).png"
@@ -26,9 +26,8 @@ const ClubActivities = () => {
           </div>
           <h3 className="font-bold text-lg mb-3">We Ride Bikes</h3>
           <p className="text-gray-600">
-            Lex Rider regularly organises ride-outs suitable for all types of
-            bikes and speeds. Our ride-outs range from short, local routes, to
-            continental travel.
+          RIDERSCONNECT regularly organizes ride-outs that cater to all types of bikes and riding styles. From short, local routes to epic continental journeys, our rides offer 
+          something for every rider, no matter your speed or experience level. Join us for unforgettable adventures on two wheels!
           </p>
         </div>
 
@@ -62,8 +61,9 @@ const ClubActivities = () => {
           </div>
           <h3 className="font-bold text-lg mb-3">Motorcycle Shows</h3>
           <p className="text-gray-600">
-            We have such a diverse collection of bikes through the club. We
-            attend and exhibit at most of the major motorcycle shows.
+          At RIDERSCONNECT, we pride ourselves on our diverse and impressive collection of bikes within our community. Our members ride everything from cruisers to adventure bikes, 
+each one with its own unique story. We actively participate in and showcase our rides at major motorcycle shows across the country, offering a chance to see some of the finest and most 
+eclectic bikes in the scene. Join us as we celebrate the art of motorcycling at these exciting events!.
           </p>
         </div>
       </div>

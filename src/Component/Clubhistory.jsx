@@ -1,16 +1,16 @@
-import { useState } from "react";
+import  { useState } from "react";
 import "tailwindcss/tailwind.css"; // Ensure TailwindCSS is included
-import image from "../Assets/img-timeline.jpg";
+import image from "../Assets/img-timeline.jpg"
 const ClubHistory = () => {
   // State to track active year based on scroll position
-  const [activeYear, setActiveYear] = useState("1935");
+  const [activeYear, setActiveYear] = useState("2022");
 
   // Handle scroll to set active year dynamically
   const handleScroll = (e) => {
     const scrollTop = e.target.scrollTop;
-    if (scrollTop < 150) setActiveYear("1935");
-    else if (scrollTop >= 150 && scrollTop < 300) setActiveYear("1946");
-    else setActiveYear("1950");
+    if (scrollTop < 150) setActiveYear("2022");
+    else if (scrollTop >= 150 && scrollTop < 300) setActiveYear("2023");
+    else setActiveYear("2024");
   };
 
   return (
@@ -41,24 +41,32 @@ const ClubHistory = () => {
             <div className="flex flex-col items-center justify-start pt-16 px-4">
               <p
                 className={`mb-6 font-bold text-xl cursor-pointer ${
-                  activeYear === "1935" ? "text-red-500" : "text-gray-400"
+                  activeYear === "2022" ? "text-yellow-600" : "text-gray-400"
                 }`}
               >
-                1935
+                2022
               </p>
               <p
                 className={`mb-6 font-bold text-xl cursor-pointer ${
-                  activeYear === "1946" ? "text-red-500" : "text-gray-400"
+                  activeYear === "2023" ? "text-yellow-600" : "text-gray-400"
                 }`}
               >
-                1946
+                2023
               </p>
               <p
                 className={`mb-6 font-bold text-xl cursor-pointer ${
-                  activeYear === "1950" ? "text-red-500" : "text-gray-400"
+                  activeYear === "2024" ? "text-yellow-600" : "text-gray-400"
                 }`}
               >
-                1950
+                2024
+              </p>
+
+              <p
+                className={`mb-6 font-bold text-xl cursor-pointer ${
+                  activeYear === "2025" ? "text-yellow-600" : "text-gray-400"
+                }`}
+              >
+                2025
               </p>
             </div>
 
@@ -69,69 +77,53 @@ const ClubHistory = () => {
             >
               {/* 1935 Section */}
               <div className="mb-8">
-                <h3 className="text-3xl font-bold text-red-500 mb-8">1935</h3>
+                <h3 className="text-3xl font-bold text-yellow-600 mb-8">2022</h3>
                 <h4 className="text-2xl font-semibold mb-8">
                   The McCook Outlaws Motorcycle Club
                 </h4>
                 <p className="text-gray-600 leading-relaxed w-[80%] justify-start">
-                  The McCook Outlaws Motorcycle Club was established out of
-                  Matilda`s Bar on old Route 66 in McCook, Illinois, just
-                  outside of Chicago. Although the Club stayed together their
-                  activities had been limited during World War II. In May of
-                  1946, the first major post-war motorcycle event was held at
-                  Soldier Field in Chicago. With new members coming from all
-                  over the Chicago area, the Club was growing in size from its
-                  early beginnings of 1935. Moving out of McCook and
-                  re-establishing itself in Chicago, the club decided to change
-                  its name. The “McCook Outlaws” became The “Chicago Outlaws”.
-                  The club logo also underwent a change; a small skull replaced
-                  the winged motorcycle .
-                </p>
+                Founded in 2022, RIDERZCONNECT quickly became a thriving hub for motorcycle enthusiasts across India. The vision was simple: to create a community where riders could connect, 
+share their passion for motorcycling, and engage in thrilling, safe, and adventurous rides. What started as a small group of like-minded individuals grew into a national network, bringing together 
+bikers from diverse backgrounds and bike genres. In its early years, RIDERZCONNECT focused on organizing local and regional rides, fostering a culture of safety and camaraderie. </p>
               </div>
 
               {/* 1946 Section */}
               <div className="mb-8">
-                <h3 className="text-3xl font-bold text-red-500 mb-8">1946</h3>
+                <h3 className="text-3xl font-bold text-yellow-600 mb-8">2023</h3>
                 <h4 className="text-2xl font-semibold mb-8">
                   Post-War Motorcycle Events
                 </h4>
                 <p className="text-gray-600 leading-relaxed">
-                  The McCook Outlaws Motorcycle Club was established out of
-                  Matilda`s Bar on old Route 66 in McCook, Illinois, just
-                  outside of Chicago. Although the Club stayed together their
-                  activities had been limited during World War II. In May of
-                  1946, the first major post-war motorcycle event was held at
-                  Soldier Field in Chicago. With new members coming from all
-                  over the Chicago area, the Club was growing in size from its
-                  early beginnings of 1935. Moving out of McCook and
-                  re-establishing itself in Chicago, the club decided to change
-                  its name. The “McCook Outlaws” became The “Chicago Outlaws”.
-                  The club logo also underwent a change; a small skull replaced
-                  the winged motorcycle .
-                </p>
+                By 2023, the community expanded its reach with the launch of chapters across various cities, hosting larger rides and more structured events, including charity rides and social gatherings. 
+The club became known for its emphasis on road safety, providing riders with educational sessions, safety gear partnerships, and expert-led expeditions. RIDERZCONNECT&apos;s signature rides, like 
+the Spiti Valley expedition and various breakfast rides across India, became hugely popular, offering both adventure and the opportunity to give back to causes that resonated with the community.  </p>
               </div>
 
               {/* 1950 Section */}
               <div className="mb-8">
-                <h3 className="text-3xl font-bold text-red-500 mb-8">1950</h3>
+                <h3 className="text-3xl font-bold text-yellow-600 mb-8">2024</h3>
                 <h4 className="text-2xl font-semibold mb-8">
                   The Chicago Outlaws
                 </h4>
                 <p className="text-gray-600 leading-relaxed">
-                  The McCook Outlaws Motorcycle Club was established out of
-                  Matilda`s Bar on old Route 66 in McCook, Illinois, just
-                  outside of Chicago. Although the Club stayed together their
-                  activities had been limited during World War II. In May of
-                  1946, the first major post-war motorcycle event was held at
-                  Soldier Field in Chicago. With new members coming from all
-                  over the Chicago area, the Club was growing in size from its
-                  early beginnings of 1935. Moving out of McCook and
-                  re-establishing itself in Chicago, the club decided to change
-                  its name. The “McCook Outlaws” became The “Chicago Outlaws”.
-                  The club logo also underwent a change; a small skull replaced
-                  the winged motorcycle .
-                </p>
+                In 2024, the club made significant strides in its partnerships with top industry brands, including collaborations with leading motorcycle apparel brands and tire companies. RIDERZCONNECT 
+also formed alliances with other motorcycle clubs, further expanding its influence and reach. The club&apos;s focus on innovation and member benefits continued to set it apart, offering premium services 
+like ride managers, mechanics, and navigators for paid expeditions. </p>
               </div>
+
+              {/* 2025 Section */}
+
+              <div className="mb-8">
+                <h3 className="text-3xl font-bold text-yellow-600 mb-8">2025</h3>
+                <h4 className="text-2xl font-semibold mb-8">
+                  The Chicago Outlaws
+                </h4>
+                <p className="text-gray-600 leading-relaxed">
+                As RIDERZCONNECT enters 2025, the club stands as one of the most recognized motorcycle communities in India, offering not only an unparalleled riding experience but also a sense of belonging 
+for riders who share the same passion. Also planning to launch its own Bikers App With a focus on inclusivity, safety, and adventure, RIDERZCONNECT continues to grow, inspiring the next generation
+ of bikers and creating a legacy of unforgettable experiences</p>
+              </div>
+
             </div>
           </div>
         </div>

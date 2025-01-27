@@ -1,9 +1,10 @@
-import React from "react";
-import background from "../Assets/breacumb.jpg";
+//import React from "react";
+//import background from "../Assets/breacumb.jpg";
 
 
  
 const ClubInfo = (props) => {
+  console.log(props)
   return (
     <div
       className="relative bg-cover bg-center w-full h-[50vh] bg-no-repeat"
@@ -14,7 +15,7 @@ const ClubInfo = (props) => {
 
       {/* Content */}
       <div className="relative flex flex-col justify-center items-center h-full text-white text-center px-4 sm:px-6 lg:px-8">
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4">{props.name}</h1>
+        {/* <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4">{props.name}</h1> */}
         <nav>
           <ul className="flex space-x-2 text-sm sm:text-base">
             <li>

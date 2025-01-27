@@ -15,15 +15,37 @@ const Review = () => {
   // Sample data for reviews and members
   const reviews = [
     {
-      comment: "We met some really great people that you wouldn't necessarily expect to meet in your normal day-to-day living. It gave me a really great insight into the diverse ways Americans think.",
-      name: "John Doe",
+      comment: "Joining RIDERSCONNECT has been a game-changer for my riding journey. Their meticulously planned rides, like the Bandipur National Park trip, offer a perfect blend of adventure and serenity. Beyond the breathtaking routes, it's the camaraderie among riders that makes it unforgettable. Every ride feels like a reunion of kindred spirits sharing a passion for the open road.",
+      name: "Arjun Verma, Bangalore",
       title: "Product Enthusiast",
       image: "https://via.placeholder.com/100",
       memberImage: "https://demo2.wpopal.com/lexrider/wp-content/uploads/elementor/thumbs/lexrider_avata1-o6rt2rjskl9fsdkqeewpghne3xig54fet4q7cs38ew.jpg", // Member image for display
     },
     {
-      comment: "Expect to meet in your normal day-to-day living. It gave me a really great insight into the diverse ways Americans think.",
-      name: "Jane Smith",
+      comment: "Safety and adventure rarely go hand-in-hand, but RIDERSCONNECT nails it! Their attention to detail—navigators, ride managers, and expert-led sessionsmakes every expedition not just thrilling but incredibly safe. Whether it’s a jungle safari or a challenging mountain pass, I know I’m in good hands. Thank you for redefining biking culture!",
+      name: "Sonal Sharma, Pune",
+      title: "Frequent Shopper",
+      image: "https://via.placeholder.com/100",
+      memberImage: "https://via.placeholder.com/50", // Member image for display
+    },
+    
+    {
+      comment: "RIDERSCONNECT is not just about rides; it’s a family. The events are thoughtfully curated, from exploring the Spiti Valley to the inaugural Nagpur ride, but it’s the people that make the difference. The surveys, contests, and road safety sessions add purpose to our passion. Proud to be part of this amazing community!",
+      name: "Akash Salve, Nagpur",
+      title: "Frequent Shopper",
+      image: "https://via.placeholder.com/100",
+      memberImage: "https://via.placeholder.com/50", // Member image for display
+    },
+    {
+      comment: "Every ride with RIDERSCONNECT feels like a professionally managed adventure. The Spiti Expedition was an experience of a lifetime breathtaking landscapes, well-organized stops, and meaningful conversations around bonfires. It’s more than just riding; it’s about creating stories worth telling!",
+      name: "Pooja Nair, Delhi",
+      title: "Frequent Shopper",
+      image: "https://via.placeholder.com/100",
+      memberImage: "https://via.placeholder.com/50", // Member image for display
+    },
+    {
+      comment: "RIDERSCONNECT brings more to the table than just scenic rides. Their collaborations with brands like BluArmor and Biryani by Kilo create unique perks and experiences for riders. It’s not just about the road; it’s about the journey, the connections, and the community. I couldn’t ask for more from a motorcycle group!",
+      name: "Vikram Singh, Jaipur",
       title: "Frequent Shopper",
       image: "https://via.placeholder.com/100",
       memberImage: "https://via.placeholder.com/50", // Member image for display
@@ -72,8 +94,8 @@ const Review = () => {
         {/* Carousel */}
         <div className="p-4 rounded-lg mb-8 h-60 transition-all duration-1000 ease-in-out">
           {/* Comment Text with Smooth Transition */}
-          <p className="text-lg lg:text-2xl text-black mb-4 transition-opacity duration-1000 ease-in-out opacity-100">
-          &ldquo;{reviews[currentReview].comment}&ldquo;
+          <p className="text-lg lg:text-1xl text-black mb-4 transition-opacity duration-1000 ease-in-out opacity-100">
+          &quot; {reviews[currentReview].comment} &quot;
           </p>
         </div>
 
@@ -89,7 +111,7 @@ const Review = () => {
           </div>
 
           {/* Right Side (Member Name and Title) */}
-          <div className="flex flex-col w-full lg:w-1/2">
+          <div className="flex flex-col w-full lg:w-1/2 top-3">
             <h3 className="font-semibold text-lg text-black">{reviews[currentReview].name}</h3>
             <p className="text-sm text-gray-600">{reviews[currentReview].title}</p>
           </div>

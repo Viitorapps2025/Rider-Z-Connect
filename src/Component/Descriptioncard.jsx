@@ -1,574 +1,397 @@
-import  { useState } from "react";
-import { FaChevronDown, FaChevronUp, FaCheckCircle, FaFilePdf } from "react-icons/fa";
+import { useState } from "react";
+import PropTypes from "prop-types";
+import {
+  FaChevronDown,
+  FaChevronUp,
+  FaCheckCircle,
+  FaFilePdf,
+  FaDirections,
+} from "react-icons/fa";
 import PhotoCarousel from "./PhotoCarousel";
-import LocationStrip from "./LocationStrip";
 import ReviewStrip from "./Review";
+//import { i } from "framer-motion/client";
 
-const DescriptionCard = () => {
-  const [highlightExpanded, setHighlightExpanded] = useState(false);
-  const [itineraryExpanded, setItineraryExpanded] = useState(false);
+
+const DescriptionCard = ({
+  images,
+  title,
+  overviewpic,
+  overview,
+  highlights = [],
+  startingPoint = [],
+  endingPoint = [],
+  startingdirection,
+  endingdirection,
+  policy = [],
+  pdfLinks = [],
+  itinerary = [],
+  stayoptions = [],
+  note = [],
+  faqs = [],
+  documentsChecklist=[]
+}) => {
+  const [expandedSections, setExpandedSections] = useState({
+    highlights: false,
+    itinerary: false,
+    note: false,
+    faqs: false,
+    stayoptions: false,
+  });
+
   const [daysExpanded, setDaysExpanded] = useState([]);
 
-  const descriptions = [
-    "Day 1: Start your journey from Manali and enjoy the scenic beauty of the valleys.",
-    "Day 2: Ride through the majestic Rohtang Pass and explore Keylong.",
-    "Day 3: Cross Baralacha Pass and enjoy the beauty of Sarchu.",
-    "Day 4: Experience the high-altitude deserts of Leh.",
-    "Day 5: Visit the famous Pangong Lake.",
-    "Day 6: Travel to Nubra Valley and ride through Khardung La.",
-    "Day 7: Explore Turtuk and experience the local culture.",
-    "Day 8: Drive back to Leh via the stunning Shyok River.",
-    "Day 9: Wrap up your trip with a visit to Kargil.",
-    "Day 10: Return to Srinagar and end your adventurous journey.",
-  ];
+  const toggleSection = (section) => {
+    setExpandedSections((prev) => ({
+      ...prev,
+      [section]: !prev[section],
+    }));
+  };
 
   const toggleDay = (index) => {
     setDaysExpanded((prev) =>
-      prev.includes(index) ? prev.filter((day) => day !== index) : [...prev, index]
+      prev.includes(index)
+        ? prev.filter((day) => day !== index)
+        : [...prev, index]
     );
   };
+  
+  console.log('Data flow checking',pdfLinks,images)
 
   return (
-    <div className="">
-    <div className="bg-white text-white max-w-4xl mx-auto  rounded-lg">
-      {/* Image */}
+    <div className="max-w-4xl mx-auto bg-[#333333] text-white rounded-lg shadow-lg p-6 mb-5">
+      {/* Overview Image */}
       <div className="w-full h-96 bg-black rounded-t-lg overflow-hidden">
         <img
-          src="https://www.adventurush.com/wp-content/uploads/2022/06/Overview-Image-3-1024x427.jpg"
-          alt="Placeholder"
+          src={overviewpic}
+          alt={title}
           className="w-full h-full object-cover"
         />
       </div>
 
-      {/* Overview */}
-      <div className="bg-black/80 p-4">
-        <h2 className="text-2xl font-bold mb-2">OVERVIEW</h2>
-        <p className="text-gray-400">
-          Join our 8N/9D Manali | Leh | Srinagar – Bike Expedition to experience a thrilling ride
-          travelling through some of the world’s most scenic landscapes to reach your destination.
-          Allow the road to take you across rivers, lakes, valleys, and mountains. Cross some of the
-          highest motorable passes in the world, stop for quick breaks to relax beside some cool
-          water bodies, and drive through rough terrains.
-        </p>
+      {/* Overview Section */}
+      <div className="p-4">
+        <h2 className="text-2xl font-bold mb-2">{title}</h2>
+        <p className="text-gray-400">{overview}</p>
       </div>
 
-      {/* Highlight Strip */}
-      <div className="bg-black/80 p-4 ">
-        <div
-          className="flex justify-between items-center cursor-pointer"
-          onClick={() => setHighlightExpanded(!highlightExpanded)}
-        >
-          <h3 className="text-xl font-bold">Highlights</h3>
-          {highlightExpanded ? <FaChevronUp /> : <FaChevronDown />}
-        </div>
-        {highlightExpanded && (
-          <ul className="mt-4 space-y-2">
-            <li className="flex items-center">
+      {/* Highlights */}
+      <ExpandableSection
+        title="Highlights"
+        isExpanded={expandedSections.highlights}
+        onToggle={() => toggleSection("highlights")}
+      >
+        <ul className="space-y-2">
+          {highlights.map((highlight, index) => (
+            <li key={index} className="flex items-center">
               <FaCheckCircle className="text-yellow-500 mr-2" />
-              Breathtaking Mountain Views
+              {highlight}
             </li>
-            <li className="flex items-center">
-              <FaCheckCircle className="text-yellow-500 mr-2" />
-              Thrilling Adventure Activities
-            </li>
-            <li className="flex items-center">
-              <FaCheckCircle className="text-yellow-500 mr-2" />
-              Connect with Nature
-            </li>
-            <li className="flex items-center">
-              <FaCheckCircle className="text-yellow-500 mr-2" />
-              Connect with Nature
-            </li>
-            <li className="flex items-center">
-              <FaCheckCircle className="text-yellow-500 mr-2" />
-              Connect with Nature
-            </li>
-            <li className="flex items-center">
-              <FaCheckCircle className="text-yellow-500 mr-2" />
-              Connect with Nature
-            </li>
-            <li className="flex items-center">
-              <FaCheckCircle className="text-yellow-500 mr-2" />
-              Connect with Nature
-            </li>
-            <li className="flex items-center">
-              <FaCheckCircle className="text-yellow-500 mr-2" />
-              Connect with Nature
-            </li>
-            <li className="flex items-center">
-              <FaCheckCircle className="text-yellow-500 mr-2" />
-              Connect with Nature
-            </li>
-            <li className="flex items-center">
-              <FaCheckCircle className="text-yellow-500 mr-2" />
-              Connect with Nature
-            </li>
-            <li className="flex items-center">
-              <FaCheckCircle className="text-yellow-500 mr-2" />
-              Connect with Nature
-            </li>
-            <li className="flex items-center">
-              <FaCheckCircle className="text-yellow-500 mr-2" />
-              Connect with Nature
-            </li>
-            <li className="flex items-center">
-              <FaCheckCircle className="text-yellow-500 mr-2" />
-              Connect with Nature
-            </li>
-            <li className="flex items-center">
-              <FaCheckCircle className="text-yellow-500 mr-2" />
-              Connect with Nature
-            </li>
-          </ul>
-        )}
-      </div>
+          ))}
+        </ul>
+      </ExpandableSection>
 
-      {/* Summarized Itinerary */}
-      <div className="bg-black/80 p-4  mb-4 border-y-2 border-gray-500">
-        <div
-          className="flex justify-between items-center cursor-pointer"
-          onClick={() => setItineraryExpanded(!itineraryExpanded)}
-        >
-          <h3 className="text-xl font-bold">Summarized Itinerary</h3>
-          {itineraryExpanded ? <FaChevronUp /> : <FaChevronDown />}
-        </div>
-        {itineraryExpanded && (
-          <div className="mt-4 space-y-4">
-            {descriptions.map((desc, index) => (
-              <div
-                key={index}
-                className="bg-gray-700 p-4 rounded-lg cursor-pointer"
-                onClick={() => toggleDay(index)}
-              >
-                {/* Day Strip */}
-                <div className="flex justify-between items-center">
-                  <div className="flex items-center">
-                    <span className="bg-yellow-500 text-white px-2 py-1 rounded-md mr-4">
-                      Day {index + 1}
-                    </span>
-                    <span>Exciting Activities</span>
-                  </div>
-                  {daysExpanded.includes(index) ? <FaChevronUp /> : <FaChevronDown />}
-                </div>
-
-                {/* Short Description */}
-                {daysExpanded.includes(index) && (
-                  <p className="mt-4 text-gray-300">{desc}</p>
-                )}
-              </div>
-            ))}
-          </div>
-        )}
-
-
-        <div className=" text-white p-6  max-w-4xl mx-auto border-y-2 border-gray-500 mt-8">
-          {/* Title */}
-          <h2 className="text-xl font-bold mb-4">Stay Options</h2>
-
-          {/* Two Divs in a Row */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-1">
-            {/* First Option */}
-            <div className="flex items-center  p-2 rounded-lg">
-              <FaCheckCircle className="text-yellow-500 text-2xl mr-2" />
-              <span className="text-base ">Luxury Hotels</span>
-            </div>
-
-            {/* Second Option */}
-            <div className="flex items-center  p-2 rounded-lg">
-              <FaCheckCircle className="text-yellow-500 text-2xl mr-2" />
-              <span className="text-base ">Cozy Guest Houses</span>
-            </div>
-
-            {/* Third Option */}
-            <div className="flex items-center  p-2 rounded-lg">
-              <FaCheckCircle className="text-yellow-500 text-2xl mr-2" />
-              <span className="text-base ">Cozy Guest Houses</span>
-            </div>
-
-            {/* Fourth Option */}
-            <div className="flex items-center  p-2 rounded-lg">
-              <FaCheckCircle className="text-yellow-500 text-2xl mr-2" />
-              <span className="text-base ">Cozy Guest Houses</span>
-            </div>
-
-            {/* Fifth Option */}
-            <div className="flex items-center p-2 rounded-lg">
-              <FaCheckCircle className="text-yellow-500 text-2xl mr-2" />
-              <span className="text-base ">Cozy Guest Houses</span>
-            </div>
-
-            {/* 6th Option */}
-            <div className="flex items-center  p-2 rounded-lg">
-              <FaCheckCircle className="text-yellow-500  text-2xl mr-2" />
-              <span className="text-base">Cozy Guest Houses</span>
-            </div>
-
-            {/* 6th Option */}
-            <div className="flex items-center  p-2 rounded-lg">
-              <FaCheckCircle className="text-yellow-500  text-2xl mr-2" />
-              <span className="text-base">Cozy Guest Houses</span>
-            </div>
-
-            {/* 6th Option */}
-            <div className="flex items-center  p-2 rounded-lg">
-              <FaCheckCircle className="text-yellow-500  text-2xl mr-2" />
-              <span className="text-base">Cozy Guest Houses</span>
-            </div>
-
-            {/* 6th Option */}
-            <div className="flex items-center  p-2 rounded-lg">
-              <FaCheckCircle className="text-yellow-500  text-2xl mr-2" />
-              <span className="text-base">Cozy Guest Houses</span>
-            </div>
-
-
-          </div>
-        </div>
-
-
-
-        <div className=" text-white p-6  max-w-4xl mx-auto mt-8 ">
-          {/* Title */}
-          <h2 className="text-xl font-bold mb-4">Inclusions</h2>
-
-          {/* Two Divs in a Row */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-1">
-            {/* First Option */}
-            <div className="flex items-center  p-2 rounded-lg">
-              <FaCheckCircle className="text-yellow-500 text-2xl mr-2" />
-              <span className="text-base ">Luxury Hotels</span>
-            </div>
-
-            {/* Second Option */}
-            <div className="flex items-center  p-2 rounded-lg">
-              <FaCheckCircle className="text-yellow-500 text-2xl mr-2" />
-              <span className="text-base ">Cozy Guest Houses</span>
-            </div>
-
-            {/* Third Option */}
-            <div className="flex items-center  p-2 rounded-lg">
-              <FaCheckCircle className="text-yellow-500 text-2xl mr-2" />
-              <span className="text-base ">Cozy Guest Houses</span>
-            </div>
-
-            {/* Fourth Option */}
-            <div className="flex items-center  p-2 rounded-lg">
-              <FaCheckCircle className="text-yellow-500 text-2xl mr-2" />
-              <span className="text-base ">Cozy Guest Houses</span>
-            </div>
-
-            {/* Fifth Option */}
-            <div className="flex items-center p-2 rounded-lg">
-              <FaCheckCircle className="text-yellow-500 text-2xl mr-2" />
-              <span className="text-base ">Cozy Guest Houses</span>
-            </div>
-
-            {/* 6th Option */}
-            <div className="flex items-center  p-2 rounded-lg">
-              <FaCheckCircle className="text-yellow-500  text-2xl mr-2" />
-              <span className="text-base">Cozy Guest Houses</span>
-            </div>
-
-            {/* 6th Option */}
-            <div className="flex items-center  p-2 rounded-lg">
-              <FaCheckCircle className="text-yellow-500  text-2xl mr-2" />
-              <span className="text-base">Cozy Guest Houses</span>
-            </div>
-
-            {/* 6th Option */}
-            <div className="flex items-center  p-2 rounded-lg">
-              <FaCheckCircle className="text-yellow-500  text-2xl mr-2" />
-              <span className="text-base">Cozy Guest Houses</span>
-            </div>
-
-            {/* 6th Option */}
-            <div className="flex items-center  p-2 rounded-lg">
-              <FaCheckCircle className="text-yellow-500  text-2xl mr-2" />
-              <span className="text-base">Cozy Guest Houses</span>
-            </div>
-
-
-          </div>
-        </div>
-         
-
-         {/* Note */}
-         <div className="bg-white">
-
-        <div className="bg-black/80 p-4  border-y-2 border-gray-500">
+      {/* Itinerary */}
+      <ExpandableSection
+        title="Itinerary"
+        isExpanded={expandedSections.itinerary}
+        onToggle={() => toggleSection("itinerary")}
+      >
+        {itinerary.map((day, index) => (
           <div
-            className="flex justify-between items-center cursor-pointer"
-            onClick={() => setHighlightExpanded(!highlightExpanded)}
+            key={index}
+            className="bg-gray-700 p-4 rounded-lg cursor-pointer mb-4"
+            onClick={() => toggleDay(index)}
           >
-            <h3 className="text-xl font-bold">Note</h3>
-            {highlightExpanded ? <FaChevronUp /> : <FaChevronDown />}
+            <div className="flex items-center gap-3">
+              <span className="bg-yellow-500 text-white px-2 py-1 rounded-md">
+                Day {day.day || index + 1}
+              </span>
+              <span className="ml-2">{day.title}</span>
+              <span className="ml-auto flex items-center">
+                {daysExpanded.includes(index) ? (
+                  <FaChevronUp />
+                ) : (
+                  <FaChevronDown />
+                )}
+              </span>
+            </div>
+            {daysExpanded.includes(index) && (
+              <div className="mt-4 space-y-2">
+                {day.activity?.map((activity, actIndex) => (
+                  <p key={actIndex} className="text-gray-300">
+                    {activity}
+                  </p>
+                ))}
+              </div>
+            )}
           </div>
-          {highlightExpanded && (
-            <ul className="mt-4 space-y-2">
-              <li className="flex items-center">
-                <FaCheckCircle className="text-yellow-500 mr-2" />
-                Breathtaking Mountain Views
-              </li>
-              <li className="flex items-center">
-                <FaCheckCircle className="text-yellow-500 mr-2" />
-                Thrilling Adventure Activities
-              </li>
-              <li className="flex items-center">
-                <FaCheckCircle className="text-yellow-500 mr-2" />
-                Connect with Nature
-              </li>
-              <li className="flex items-center">
-                <FaCheckCircle className="text-yellow-500 mr-2" />
-                Connect with Nature
-              </li>
-              <li className="flex items-center">
-                <FaCheckCircle className="text-yellow-500 mr-2" />
-                Connect with Nature
-              </li>
-              <li className="flex items-center">
-                <FaCheckCircle className="text-yellow-500 mr-2" />
-                Connect with Nature
-              </li>
-              <li className="flex items-center">
-                <FaCheckCircle className="text-yellow-500 mr-2" />
-                Connect with Nature
-              </li>
-              <li className="flex items-center">
-                <FaCheckCircle className="text-yellow-500 mr-2" />
-                Connect with Nature
-              </li>
-              <li className="flex items-center">
-                <FaCheckCircle className="text-yellow-500 mr-2" />
-                Connect with Nature
-              </li>
-              <li className="flex items-center">
-                <FaCheckCircle className="text-yellow-500 mr-2" />
-                Connect with Nature
-              </li>
+        ))}
+      </ExpandableSection>
 
-            </ul>
+      {/* Stay Options */}
+      <ExpandableSection
+        title="Stay Options"
+        isExpanded={expandedSections.stayoptions}
+        onToggle={() => toggleSection("stayoptions")}
+      >
+        <ul className="space-y-2">
+          {stayoptions.map((option, index) => (
+            <li key={index} className="flex items-center">
+              <FaCheckCircle className="text-yellow-500 mr-2" />
+              {option}
+            </li>
+          ))}
+        </ul>
+      </ExpandableSection>
+
+      {/* Notes */}
+      <ExpandableSection
+        title="Notes"
+        isExpanded={expandedSections.note}
+        onToggle={() => toggleSection("note")}
+      >
+        <ul className="space-y-2">
+          {note.map((item, index) => (
+            <li key={index} className="flex items-center">
+              <FaCheckCircle className="text-yellow-500 mr-2" />
+              {item}
+            </li>
+          ))}
+        </ul>
+      </ExpandableSection>
+
+      {/* Photo Carousel */}
+      <h1 className="text-xl text-white font-bold mt-4 mb-4">Gallery</h1>
+  
+        <PhotoCarousel images={images}/>
+
+      {/* Starting Point */}
+      <Section title="Starting Point">
+        <div>
+          {startingPoint.map((point, index) => (
+            <p key={index} className="text-gray-400">
+              {point}
+            </p>
+          ))}
+          {startingdirection && (
+            <div className="mt-2 flex items-center">
+              <span>Directions:</span>
+              <a
+                href={startingdirection}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="ml-2 text-yellow-500"
+              >
+                <FaDirections />
+              </a>
+            </div>
           )}
         </div>
-          </div>
+      </Section>
 
-
-        <h1 className="text-xl text-white font-bold mt-4 mb-4">Gallery</h1>
-        <PhotoCarousel />
-        <LocationStrip />
-
+      {/* Ending Point */}
+      <Section title="Ending Point">
         <div>
-
-
-          {/* Policies */}
-          <div className="bg-white">
-
-          <div className="bg-black/80 p-4  mb-4 border-y-2 border-gray-500">
-            <div
-              className="flex justify-between items-center cursor-pointer"
-              onClick={() => setItineraryExpanded(!itineraryExpanded)}
-            >
-              <h3 className="text-xl font-bold">Policies</h3>
-              {itineraryExpanded ? <FaChevronUp /> : <FaChevronDown />}
+          {endingPoint.map((point, index) => (
+            <p key={index} className="text-gray-400">
+              {point}
+            </p>
+          ))}
+          {endingdirection && (
+            <div className="mt-2 flex items-center">
+              <span>Directions:</span>
+              <a
+                href={endingdirection}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="ml-2 text-yellow-500"
+              >
+                <FaDirections />
+              </a>
             </div>
-            {itineraryExpanded && (
-              <div className="mt-4 space-y-4">
-                {descriptions.map((desc, index) => (
-                  <div
-                    key={index}
-                    className="bg-gray-700 p-4 rounded-lg cursor-pointer"
-                    onClick={() => toggleDay(index)}
-                  >
-                    {/* Day Strip */}
-                    <div className="flex justify-between items-center">
-                      <div className="flex items-center">
-                        <span className="bg-yellow-500 text-white px-2 py-1 rounded-md mr-4">
-                          {index + 1}
-                        </span>
-                        <p>policies</p>
+          )}
+        </div>
+      </Section>
 
-                      </div>
-                      {daysExpanded.includes(index) ? <FaChevronUp /> : <FaChevronDown />}
-                    </div>
-
-                    {/* Short Description */}
-                    {daysExpanded.includes(index) && (
-                      <p className="mt-4 text-gray-300">{desc}</p>
-                    )}
-                  </div>
+       {/* Itinerary */}
+       <ExpandableSection
+        title="Policy"
+        isExpanded={expandedSections.policy}
+        onToggle={() => toggleSection("policy")}
+      >
+        {policy.map((day, index) => (
+          <div
+            key={index}
+            className="bg-gray-700 p-4 rounded-lg cursor-pointer mb-4"
+            onClick={() => toggleDay(index)}
+          >
+            <div className="flex items-center gap-3">
+            <span className="bg-yellow-500 text-white px-2 py-1 rounded-md">
+            {day.policyid || `Policy ${index + 1}`}
+          </span>
+              <span className="ml-2">{day.title}</span>
+              <span className="ml-auto flex items-center">
+                {daysExpanded.includes(index) ? (
+                  <FaChevronUp />
+                ) : (
+                  <FaChevronDown />
+                )}
+              </span>
+            </div>
+            {daysExpanded.includes(index) && (
+              <div className="mt-4 space-y-2">
+                {day.activity?.map((activity, actIndex) => (
+                  <p key={actIndex} className="text-gray-300">
+                    {activity}
+                  </p>
                 ))}
               </div>
             )}
           </div>
+        ))}
+      </ExpandableSection>
 
-        </div>
+      {/* Attachments */}
+      <Section title="Attachments">
+      <div className="flex flex-wrap gap-4">
+  {pdfLinks.length > 0 ? (
+    pdfLinks.map((link, index) => (
+      <a
+        key={index}
+        href={link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center bg-gray-700 p-4 rounded-lg hover:bg-gray-600 transition"
+      >
+        <FaFilePdf className="text-yellow-500 text-4xl mr-4" />
+        <span>{link.title || "Trip Details"}</span>
+      </a>
+    ))
+  ) : (
+    <p>No attachments available.</p>
+  )}
+</div>
+
+
+      </Section>
+
+
+      {/* FAQs */}
+      <ExpandableSection
+        title="FAQs"
+        isExpanded={expandedSections.faqs}
+        onToggle={() => toggleSection("faqs")}
+      >
+        {faqs.map((day, index) => (
+          <div
+            key={index}
+            className="bg-gray-700 p-4 rounded-lg cursor-pointer mb-4"
+            onClick={() => toggleDay(index)}
+          >
+            <div className="flex items-center gap-3">
+              <span className="bg-yellow-500 text-white px-2 py-1 rounded-md">
+                {day.day || index + 1}
+              </span>
+              <span className="ml-2">{day.question}</span>
+              <span className="ml-auto flex items-center">
+                {daysExpanded.includes(index) ? (
+                  <FaChevronUp />
+                ) : (
+                  <FaChevronDown />
+                )}
+              </span>
             </div>
-
-
-        {/* Attachments */}
-        <div>
-          <div className=" text-white p-6 rounded-lg max-w-4xl mx-auto">
-          <h1 className="pb-4 text-lg font-bold">Attachments</h1>
-            {/* Button Strip */}
-            <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
-              
-              {/* First Button */}
-              <button className="flex items-start bg-black/80 p-4 rounded-lg w-full sm:w-auto lg:w-1/2 text-left hover:bg-gray-500 transition">
-                <FaFilePdf className="text-yellow-500 text-4xl mr-4" />
-                <div>
-                  <h3 className="text-xl font-bold">Trip Detail</h3>
-                  <p className="text-gray-400 text-sm">Download</p>
-                </div>
-              </button>
-
-              {/* Second Button */}
-              <button className="flex items-start bg-black/80 p-4 rounded-lg w-full sm:w-auto lg:w-1/2 text-left hover:bg-gray-500 transition">
-                <FaFilePdf className="text-yellow-500 text-4xl mr-4" />
-                <div>
-                  <h3 className="text-xl font-bold">Trip Advisory</h3>
-                  <p className="text-gray-400 text-sm">Download</p>
-                </div>
-              </button>
-            </div>
-          </div>
-        </div>
-
-
-
-
-
-         {/* Faq */}
-          <div className="bg-white">
-
-         <div className="bg-black/80 p-4  mb-4 border-y-2 border-gray-500">
-            <div
-              className="flex justify-between items-center cursor-pointer"
-              onClick={() => setItineraryExpanded(!itineraryExpanded)}
-            >
-              <h3 className="text-xl font-bold">Faq</h3>
-              {itineraryExpanded ? <FaChevronUp /> : <FaChevronDown />}
-            </div>
-            {itineraryExpanded && (
-              <div className="mt-4 space-y-4">
-                {descriptions.map((desc, index) => (
-                  <div
-                    key={index}
-                    className="bg-gray-700 p-4 rounded-lg cursor-pointer"
-                    onClick={() => toggleDay(index)}
-                  >
-                    {/* Day Strip */}
-                    <div className="flex justify-between items-center">
-                      <div className="flex items-center">
-                        <span className="bg-yellow-500 text-white px-2 py-1 rounded-md mr-4">
-                          {index + 1}
-                        </span>
-                        <p>Faq</p>
-
-                      </div>
-                      {daysExpanded.includes(index) ? <FaChevronUp /> : <FaChevronDown />}
-                    </div>
-
-                    {/* Short Description */}
-                    {daysExpanded.includes(index) && (
-                      <p className="mt-4 text-gray-300">{desc}</p>
-                    )}
-                  </div>
-                ))}
+            {daysExpanded.includes(index) && (
+              <div className="mt-4 space-y-2">
+                <p> {day.answer}</p>
               </div>
             )}
           </div>
-            </div>
+        ))}
+      </ExpandableSection>
 
+      <ExpandableSection
+        title="Documents to Carry"
+        isExpanded={expandedSections.documentsChecklist}
+        onToggle={() => toggleSection("documentsChecklist")}
+      >
+        <ul className="space-y-2">
+          {documentsChecklist.map((item, index) => (
+            <li key={index} className="flex items-center">
+              <FaCheckCircle className="text-yellow-500 mr-2" />
+              {item}
+            </li>
+          ))}
+        </ul>
 
+       
+      </ExpandableSection>
 
-
-
- {/* Detail Itinerary */}
- <div className="bg-white">
-
- <div className="bg-black/80 p-4  mb-4 ">
-            <div
-              className="flex justify-between items-center cursor-pointer"
-              onClick={() => setItineraryExpanded(!itineraryExpanded)}
-            >
-              <h3 className="text-xl font-bold">Detail Itinerary</h3>
-              {itineraryExpanded ? <FaChevronUp /> : <FaChevronDown />}
-            </div>
-            {itineraryExpanded && (
-              <div className="mt-4 space-y-4">
-                {descriptions.map((desc, index) => (
-                  <div
-                    key={index}
-                    className="bg-gray-700 p-4 rounded-lg cursor-pointer"
-                    onClick={() => toggleDay(index)}
-                  >
-                    {/* Day Strip */}
-                    <div className="flex justify-between items-center">
-                      <div className="flex items-center">
-                        <span className="bg-yellow-500 text-white px-2 py-1 rounded-md mr-4">
-                        Day  {index + 1}
-                        </span>
-                        <p>Detail Itinerary</p>
-
-                      </div>
-                      {daysExpanded.includes(index) ? <FaChevronUp /> : <FaChevronDown />}
-                    </div>
-
-                    {/* Short Description */}
-                    {daysExpanded.includes(index) && (
-                      <p className="mt-4 text-gray-300">{desc}</p>
-                    )}
-                  </div>
-                ))}
-              </div>
-            )}
-          </div> 
-            </div>
-
-
-
-
-          <div className=" text-white p-6  max-w-4xl mx-auto border-y-2 border-gray-500 mt-8">
-          {/* Title */}
-          <h2 className="text-xl font-bold mb-4">Document to carry</h2>
-
-          {/* Two Divs in a Row */}
-          <div className="grid grid-cols-1 sm:grid-cols-1 gap-1">
-            {/* First Option */}
-            <div className="flex items-center  p-2 rounded-lg">
-              <FaCheckCircle className="text-yellow-500 text-2xl mr-2" />
-              <span className="text-base ">Luxury Hotels</span>
-            </div>
-
-            {/* Second Option */}
-            <div className="flex items-center  p-2 rounded-lg">
-              <FaCheckCircle className="text-yellow-500 text-2xl mr-2" />
-              <span className="text-base ">Cozy Guest Houses</span>
-            </div>
-
-            {/* Third Option */}
-            <div className="flex items-center  p-2 rounded-lg">
-              <FaCheckCircle className="text-yellow-500 text-2xl mr-2" />
-              <span className="text-base ">Cozy Guest Houses</span>
-            </div>
-
-             <ReviewStrip/>
-
-
-          </div>
-        </div>
-
-
-
-
-      </div>
-
-
+      <ReviewStrip/>
 
     </div>
-    </div>
-
-
   );
+};
+
+const ExpandableSection = ({ title, isExpanded, onToggle, children }) => (
+  <div className="p-4 border-y-2 border-gray-500">
+    <div
+      className="flex justify-between items-center cursor-pointer"
+      onClick={onToggle}
+    >
+      <h3 className="text-xl font-bold">{title}</h3>
+      {isExpanded ? <FaChevronUp /> : <FaChevronDown />}
+    </div>
+    {isExpanded && <div className="mt-4">{children}</div>}
+  </div>
+);
+
+const Section = ({ title, children }) => (
+  <div className="p-6">
+    <h2 className="text-xl font-bold mb-4">{title}</h2>
+    {children}
+  </div>
+);
+
+DescriptionCard.propTypes = {
+  images: PropTypes.arrayOf(PropTypes.string),
+  title: PropTypes.string.isRequired,
+  overviewpic: PropTypes.string.isRequired,
+  overview: PropTypes.string.isRequired,
+  highlights: PropTypes.arrayOf(PropTypes.string),
+  stayoptions: PropTypes.arrayOf(PropTypes.string),
+  note: PropTypes.arrayOf(PropTypes.string),
+  documentsChecklist:PropTypes.arrayOf(PropTypes.string),
+  startingPoint: PropTypes.arrayOf(PropTypes.string),
+  endingPoint: PropTypes.arrayOf(PropTypes.string),
+  startingdirection: PropTypes.string,
+  endingdirection: PropTypes.string,
+  pdfLinks: PropTypes.arrayOf(
+    PropTypes.shape({
+      
+      title: PropTypes.string,
+      link: PropTypes.arrayOf(PropTypes.string),
+    })
+  ),
+  itinerary: PropTypes.arrayOf(
+    PropTypes.shape({
+      day: PropTypes.number,
+      title: PropTypes.string,
+      activity: PropTypes.arrayOf(PropTypes.string),
+    })
+  ),
+  faqs: PropTypes.arrayOf(
+    PropTypes.shape({
+      question: PropTypes.string,
+      answer: PropTypes.string,
+    })
+  ),
+  policy: PropTypes.arrayOf(
+    PropTypes.shape({
+      question: PropTypes.string,
+      answer: PropTypes.string,
+    })
+  ),
 };
 
 export default DescriptionCard;

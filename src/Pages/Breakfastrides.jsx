@@ -1,7 +1,6 @@
-//import React from 'react'
-import CardLayout from '../Component/Cardlayout'
-//import Footer from '../Component/Footer'
-//import Questions from '../Component/Questions'
+
+import BreakfastCardLayout from '../Component/BreakfastCardLayout'
+
 
 const Breakfastrides = () => {
   return (
@@ -11,14 +10,11 @@ const Breakfastrides = () => {
       </div>
       
       <div className='max-w-7xl mx-auto'>
-        <CardLayout/>
+        <BreakfastCardLayout/>
       </div>
       </div>
 
-      <div className='mt-28'>
-        {/* <Questions/> */}
-        {/* <Footer/> */}
-      </div>
+      
     </div>
   )
 }

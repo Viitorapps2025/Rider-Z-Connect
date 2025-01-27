@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import image  from "../Assets/gallery-8.jpg"
 const testimonials = [
   {
@@ -67,7 +67,7 @@ const MembershipSection = () => {
         <div className="bg-white text-black rounded-lg shadow-lg w-11/12 md:w-2/3 lg:w-[30%] p-6 relative h-48">
           {/* Testimonial Content */}
           <p className="italic text-gray-700 text-center mb-4">
-            {testimonials[currentTestimonial].text}
+            "{testimonials[currentTestimonial].text}"
           </p>
           <div className="flex gap-4">
             <img

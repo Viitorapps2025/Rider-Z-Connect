@@ -1,10 +1,9 @@
 import  { useState } from 'react';
-
-
+//import { Link } from 'react-router-dom';
 
 const ProductCard = ({ image, title, description, price }) => (
   
-    <div className="w-72 shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
+    <div className="bg-black/90 p-4 rounded-lg shadow-sm shadow-slate-900">
       <img src={image} alt={title} className="w-full h-80 object-fill rounded-md" />
       <h3 className="text-white mt-2 font-semibold">{title}</h3>
       <p className="text-gray-400">{description}</p>
@@ -155,7 +154,7 @@ const ProductGrid = () => {
       </div>
 
       {/* Product Grid */}
-      <div className="w-fit mx-auto grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 justify-items-center justify-center gap-y-20 gap-x-14 mt-10 mb-5">
+      <div className="grid max-w-4xl lg:max-w-6xl grid-cols-1 mx-auto mt-8 text-center gap-y-4 sm:gap-x-8 sm:grid-cols-2 lg:grid-cols-3 sm:mt-12 lg:mt-20 sm:text-left">
         {sortedProducts.map((product, index) => (
           <ProductCard key={index} {...product} />
         ))}

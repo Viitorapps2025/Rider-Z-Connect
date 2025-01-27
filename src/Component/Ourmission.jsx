@@ -1,4 +1,4 @@
-import  { useEffect } from "react";
+import { useEffect } from "react";
 import helmet from "../Assets/Icons/helmet.png";
 import support from "../Assets/Icons/collaboration.png";
 import community from "../Assets/Icons/group.png";
@@ -20,21 +20,21 @@ const Ourmission = () => {
       id: 1,
       title: "RIDE OUTS",
       description:
-        "Lex Rider regularly organises ride-outs suitable for all types of bikes and speeds. Our ride-outs range from short, local routes, to continental travel.",
+        "Embark on thrilling adventures with our meticulously planned ride-outs. Tailored for bikers of all levels, our journeys cover scenic local trails, adrenaline-pumping highways, and breathtaking long-distance escapades, fostering camaraderie and unforgettable memories.",
       icon: helmet,
     },
     {
       id: 2,
       title: "SUPPORTS",
       description:
-        "Establish a brotherhood of other like minded bikers who take an oath to stand with us, to support and defend the Constitution against all enemies, foreign and domestic.",
+        " We stand united as a community, fostering a bond of trust and mutual support among riders. Together, we champion road safety, promote responsible biking, and create a network that uplifts and empowers each member, both on and off the road.",
       icon: support,
     },
     {
       id: 3,
       title: "COMMUNITIES",
       description:
-        "Provide an opportunity to give back to communities as well as provide assistance to veterans related injuries via charities, benefits, and donations.",
+        "Our mission goes beyond riding—we aim to build thriving communities. Through charity drives, awareness campaigns, and collaborative initiatives, we give back to society, making a meaningful difference while celebrating the spirit of unity among riders.",
       icon: community,
     },
   ];

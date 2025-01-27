@@ -1,4 +1,4 @@
-//import React from 'react'
+
 import helmet from "../Assets/Icons/helmet.png"
 import tyre from "../Assets/Icons/tyre.png"
 import workshop from "../Assets/Icons/team.png"
@@ -46,10 +46,10 @@ const Runningnumbers = () => {
   }, [targetDate]);
 
   const events = [
-    { icon: helmet, targetNumber: 185, title: 'MEMBERS' },
-    { icon: tyre, targetNumber: 468, title: 'CLUB RIDERS' },
-    { icon: workshop, targetNumber: 1561, title: 'REPAIRS IN WORKSHOPS' },
-    { icon: speedometer, targetNumber: 219561, title: 'TOTAL KMS BY THE CLUB' },
+    { icon: helmet, targetNumber: 8600, title: 'MEMBERS' },
+    { icon: tyre, targetNumber:  136, title: 'CLUB RIDERS' },
+    { icon: workshop, targetNumber: 8, title: 'DIY Workshops' },
+    { icon: speedometer, targetNumber: 272000, title: ' Total Kms' },
   ];
 
   const [animatedNumbers, setAnimatedNumbers] = useState(

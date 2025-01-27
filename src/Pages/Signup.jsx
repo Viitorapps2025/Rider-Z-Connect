@@ -1,6 +1,6 @@
-import  { useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom"; // For navigation
-import { FaEnvelope, FaLock, FaExclamationCircle, FaPhoneAlt, FaUser } from "react-icons/fa";
+import { FaEnvelope, FaLock, FaExclamationCircle, FaPhoneAlt, FaUser, FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Signup = () => {
   const [email, setEmail] = useState("");
@@ -10,8 +10,11 @@ const Signup = () => {
   const [phone, setPhone] = useState("");
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
+  const [showPassword, setShowPassword] = useState(false); // State to toggle password visibility
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false); // State to toggle confirm password visibility
 
   const navigate = useNavigate(); // Initialize the navigate function
+
 
   const handleSignup = async (e) => {
     e.preventDefault();
@@ -31,7 +34,7 @@ const Signup = () => {
 
     // API call
     try {
-      const response = await fetch("https://riderz-backend-0e0d.onrender.com/api/auth/signup", {
+      const response = await fetch("https://riderz-backend-ep.onrender.com/api/auth/signup", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -57,7 +60,7 @@ const Signup = () => {
 
         // Redirect to the home page after a delay
         setTimeout(() => {
-          navigate("/"); // Update with your home route
+          navigate("/verifyuser"); // Update with your home route
         }, 2000);
       } else {
         const errorData = await response.json();
@@ -142,7 +145,7 @@ const Signup = () => {
               <div className="flex items-center bg-gray-800 px-3 py-2 rounded-lg">
                 <FaLock className="text-gray-500 mr-2" />
                 <input
-                  type="password"
+                  type={showPassword ? "text" : "password"}
                   id="password"
                   className="bg-transparent flex-1 focus:outline-none text-white"
                   placeholder="Enter your password"
@@ -150,6 +153,13 @@ const Signup = () => {
                   onChange={(e) => setPassword(e.target.value)}
                   required
                 />
+                <button
+                  type="button"
+                  className="text-gray-500"
+                  onClick={() => setShowPassword(!showPassword)}
+                >
+                  {showPassword ? <FaEyeSlash /> : <FaEye />}
+                </button>
               </div>
             </div>
 
@@ -161,7 +171,7 @@ const Signup = () => {
               <div className="flex items-center bg-gray-800 px-3 py-2 rounded-lg">
                 <FaLock className="text-gray-500 mr-2" />
                 <input
-                  type="password"
+                  type={showConfirmPassword ? "text" : "password"}
                   id="confirmPassword"
                   className="bg-transparent flex-1 focus:outline-none text-white"
                   placeholder="Confirm your password"
@@ -169,6 +179,13 @@ const Signup = () => {
                   onChange={(e) => setConfirmPassword(e.target.value)}
                   required
                 />
+                <button
+                  type="button"
+                  className="text-gray-500"
+                  onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                >
+                  {showConfirmPassword ? <FaEyeSlash /> : <FaEye />}
+                </button>
               </div>
             </div>
 
@@ -214,7 +231,6 @@ const Signup = () => {
             >
               Sign Up →
             </button>
-          
           </form>
         </div>
       </div>

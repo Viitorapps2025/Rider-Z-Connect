@@ -21,7 +21,7 @@ const Events = () => {
           <Carousel />
         </div>
         <div>
-        
+       
         </div>
       </div>
 

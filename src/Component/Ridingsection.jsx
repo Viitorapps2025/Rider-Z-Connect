@@ -1,5 +1,6 @@
-//import React from "react";
+
 import background from "../Assets/rev_slidehome1_1.jpg"
+import { Link } from "react-router-dom";
 const RidingSection = () => {
   return (
     <div
@@ -17,12 +18,12 @@ const RidingSection = () => {
         <h1 className="text-white text-4xl md:text-6xl font-bold leading-tight mb-6">
           Become a Part of <br /> Our Family
         </h1>
-        <a
-          href="#contact"
+        <Link
+          to ="/contact"
           className="bg-red-600 hover:bg-red-700 text-white text-sm md:text-lg font-semibold px-6 py-3 rounded-lg uppercase"
         >
           Contact Us
-        </a>
+        </Link>
       </div>
     </div>
   );

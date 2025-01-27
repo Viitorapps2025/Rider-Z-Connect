@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -44,6 +45,20 @@ const CartItem = ({ item, onRemove, onUpdateQuantity }) => {
   );
 };
 
+// Adding PropTypes validation for CartItem
+CartItem.propTypes = {
+  item: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+    size: PropTypes.string,
+    price: PropTypes.number.isRequired,
+    quantity: PropTypes.number.isRequired,
+    image: PropTypes.string.isRequired,
+  }).isRequired,
+  onRemove: PropTypes.func.isRequired,
+  onUpdateQuantity: PropTypes.func.isRequired,
+};
+
 const AddtoCart = () => {
   const [cartItems, setCartItems] = useState([
     {
@@ -85,9 +100,11 @@ const AddtoCart = () => {
 
   return (
     <div className="bg-black text-gray-300 min-h-screen p-4 sm:p-8 ">
-      <Link to="/shop"> <button className="text-gray-400 text-sm mb-4 hover:text-white mt-28">
-        &lt; Continue shopping
-      </button></Link>
+      <Link to="/shop">
+        <button className="text-gray-400 text-sm mb-4 hover:text-white mt-28">
+          &lt; Continue shopping
+        </button>
+      </Link>
 
       <div className="bg-black rounded-lg shadow-lg p-4 sm:p-8">
         {cartItems.map((item) => (

@@ -1,4 +1,4 @@
-
+import React from 'react';
 import member from "../Assets/Icons/group.png"
 import riding from "../Assets/Icons/motorcycle-of-big-size-black-silhouette.png"
 import experience from "../Assets/Icons/reputation.png"

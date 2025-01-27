@@ -1,4 +1,3 @@
-
 import bikeImage1 from "../Assets/lexrider_banner2_2a.jpg"; // Replace with your red-tinted bike image
 import bikeImage2 from "../Assets/lexrider_banner2_1a.jpg"; // Replace with your lower image
 
@@ -9,23 +8,37 @@ const MotorcycleClubSection = () => {
         {/* Left Section */}
         <div className="flex flex-col justify-center space-y-6">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold">
-            VINTAGE MOTORCYCLE CLUB OF{" "}
-            <span className="text-red-600">WESTERN AUSTRALIA</span>
+            RIDERZCONNECT:{" "}
+            <span className="text-yellow-600">
+              The Ultimate Biker Community
+            </span>
           </h1>
           <p className="text-gray-300 leading-relaxed">
-            If you are looking to find a group of well-established and safe to
-            ride with, you’ve found us. We were founded as a formal motorcycle
-            club in Boston in 1985, and are still going strong. We focus on safe
-            riding and we also ride for charities that are near and dear to our
-            hearts.
+            If you&apos;re looking for a dynamic, safe, and passionate community
+            to ride with, you&apos;ve come to the right place. Founded with a
+            vision to connect riders from all walks of life, RIDERZCONNECT has
+            grown into one of the most trusted names in the motorcycle world.
+            Since our inception in 2020, we have been committed to fostering a
+            culture of safety, camaraderie, and adventure.
           </p>
           <p className="text-gray-300 leading-relaxed">
-            We are a national club with chapters and members across the country.
-            Our passion for motorcycling provides a unique bond within the legal
-            community. We ride virtually every make and model of bike, although
-            a majority rides Harleys.
+            At RIDERZCONNECT, we believe that riding isn&apos;t just about the
+            destination it&apos;s about the journey and the bonds we create
+            along the way. Whether you&apos;re a weekend warrior or a seasoned
+            road enthusiast, our community offers a place where every rider is
+            welcome. We host regular events, expeditions, and charity rides,
+            giving back to causes that matter to us.
           </p>
-          <button className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 font-semibold rounded-md self-start">
+          <p className="text-gray-300 leading-relaxed">
+            With chapters across India, we unite riders of all bike makes and
+            models though you&apos;ll often find a strong presence of cruisers
+            and adventure bikes in the mix. We embrace the diversity of
+            motorcycling, and our members are bound by a shared love for the
+            open road. Join us at RIDERZCONNECT, where riding is more than just
+            a hobby it&apos;s a way of life. Ride safe, ride strong, and ride
+            with purpose.
+          </p>
+          <button className="bg-yellow-600 hover:bg-yellow-700 text-white px-6 py-3 font-semibold rounded-md self-start">
             EXPLORE OUR RIDES
           </button>
         </div>
@@ -56,7 +69,7 @@ const MotorcycleClubSection = () => {
           <h2 className="text-3xl sm:text-4xl font-bold">
             WE KEPT WHAT WE LOVED ABOUT THE BIKE
           </h2>
-          <hr className="w-16 border-t-2 border-red-600 mx-auto lg:mx-0" />
+          <hr className="w-16 border-t-2 border-yellow-600 mx-auto lg:mx-0" />
         </div>
       </div>
     </section>

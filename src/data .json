@@ -1,0 +1,125 @@
+{
+    "rideDetails": {
+      "title": "Coimbatore to Kodaikanal Ride",
+      "organizers": [
+        "RIDERZCONNECT",
+        "Riderz Army (RC Coimbatore Chapter)"
+      ],
+      "date": "2024-03-23",
+      "route": {
+        "start": "Coimbatore",
+        "end": "Kodaikanal",
+        "distance_km": 170,
+        "highlights": [
+          "Scenic countryside views",
+          "Winding ghat roads",
+          "Lush greenery and misty cliffs"
+        ]
+      },
+      "highlights": [
+        {
+          "title": "Safety Meets Brotherhood",
+          "description": "Pre-ride safety briefings, skilled marshals, and a seamless support team ensured a smooth and safe journey."
+        },
+        {
+          "title": "The Roadside Revelries",
+          "description": "Every pit stop was a celebration with filter coffee, spicy snacks, and moments of camaraderie."
+        },
+        {
+          "title": "Kodaikanal: The Crown Jewel",
+          "description": "The riders were greeted with crisp mountain air, breathtaking views, and an evening bonfire that brought everyone together."
+        }
+      ],
+      "specialFeatures": [
+        {
+          "title": "Wuerth India’s Workshop on Wheels",
+          "description": "An interactive bike maintenance session with exclusive goodies like chain lubes and cleaning kits."
+        },
+        {
+          "title": "Coolnut’s Portable Power Stations",
+          "description": "Ensured that all devices stayed charged, enabling GPS navigation and memory capturing."
+        },
+        {
+          "title": "Wanderlooms Biker Gear",
+          "description": "Riders sported stylish custom jerseys and biker swag, blending style with adventure."
+        }
+      ],
+      "sponsors": [
+        {
+          "name": "Wuerth India",
+          "role": "Bike care and maintenance solutions"
+        },
+        {
+          "name": "Coolnut",
+          "role": "Portable power stations for charging devices"
+        },
+        {
+          "name": "Wanderlooms",
+          "role": "Custom biker merchandise"
+        }
+      ],
+      "summary": "This ride was a perfect blend of adventure, safety, and camaraderie, creating unforgettable memories for all participants."
+    },
+    "rideDetails": {
+      "title": "Throttle Tales: Chennai to Vattavada with RC Chennai Chapter",
+      "organizers": [
+        "RC Chennai Chapter",
+        "Team Coz Kargil"
+      ],
+      "date": "2024-03-10",
+      "route": {
+        "start": "Chennai",
+        "end": "Vattavada",
+        "distance_km": 650,
+        "highlights": [
+          "Tamil Nadu’s lush landscapes",
+          "Pristine hill station of Vattavada",
+          "Rolling meadows and verdant plantations"
+        ]
+      },
+      "highlights": [
+        {
+          "title": "Safety and Camaraderie",
+          "description": "Pre-ride briefings, ride marshals, and a well-coordinated support crew ensured a smooth and enjoyable journey."
+        },
+        {
+          "title": "Pit Stops of Joy",
+          "description": "Curated stops offered local delicacies, scenic photo opportunities, and bonding sessions."
+        },
+        {
+          "title": "The Vattavada Experience",
+          "description": "Riders were welcomed by mist-clad hills, cardamom plantations, and an evening bonfire that fostered community."
+        }
+      ],
+      "specialFeatures": [
+        {
+          "title": "Wuerth India’s Maintenance Workshop",
+          "description": "Hands-on bike maintenance workshop with exclusive Wuerth goodies for riders."
+        },
+        {
+          "title": "Coolnut’s Power Packs",
+          "description": "Portable power stations ensured devices stayed charged even in remote areas."
+        },
+        {
+          "title": "Wanderlooms Merchandise",
+          "description": "Stylish custom jerseys and accessories added a touch of biker swag to the adventure."
+        }
+      ],
+      "sponsors": [
+        {
+          "name": "Wuerth India",
+          "role": "Ensuring bike maintenance and care"
+        },
+        {
+          "name": "Coolnut",
+          "role": "Providing portable power solutions"
+        },
+        {
+          "name": "Wanderlooms",
+          "role": "Supplying premium biker merchandise"
+        }
+      ],
+      "summary": "The Chennai to Vattavada ride was a celebration of the biking spirit, blending thrill, safety, and fellowship into an unforgettable journey."
+    }
+  }
+  
